@@ -46,7 +46,7 @@ Inteiro Inteiro::mult(Inteiro n)
 		return Inteiro(value + mult(n.getValue() - 1).getValue());
 }
 
-int main(int argc, char **argv)
+int main()
 {
 	Inteiro n(2);
 	std::cout << n.mult(3).getValue() << std::endl;
