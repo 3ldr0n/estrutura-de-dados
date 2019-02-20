@@ -31,7 +31,7 @@ Natural Natural::mult(Natural n)
 	else if (n.getValue() == 1)
 		return Natural(value);
 	else
-		return Natural(value + mult(value-1).getValue());
+		return Natural(value + mult(n.getValue()-1).getValue());
 }
 
 int main()
