@@ -1,10 +1,12 @@
 #include <iostream>
 
-#include "Inteiro.hpp"
+#include "Inteiro.h"
 
 int main()
 {
-	Inteiro n(2);
-	std::cout << n.mult(3).getValue() << std::endl;
+	Inteiro x(9);
+	Inteiro y(-19);
+	std::cout << (x.pred() - y).getValue() << std::endl;
+	std::cout << (x - y).pred().getValue() << std::endl;
 	return 0;
 }

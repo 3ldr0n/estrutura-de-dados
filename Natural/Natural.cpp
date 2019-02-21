@@ -1,4 +1,4 @@
-#include "Natural.hpp"
+#include "Natural.h"
 
 Natural::Natural(unsigned int n)
 {

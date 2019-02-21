@@ -1,10 +1,12 @@
 #include <iostream>
 
-#include "Natural.hpp"
+#include "Natural.h"
 
 int main()
 {
-	Natural n(23);
-	std::cout << n.mult(3).suc().getValue() << std::endl;
+	Natural x(23);
+	Natural y(9);
+	std::cout << (x.suc() + y).getValue() << std::endl;
+	std::cout << (x + y).suc().getValue() << std::endl;
 	return 0;
 }

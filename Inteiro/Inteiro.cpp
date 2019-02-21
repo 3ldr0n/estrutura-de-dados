@@ -1,4 +1,4 @@
-#include "Inteiro.hpp"
+#include "Inteiro.h"
 
 Inteiro::Inteiro(int n)
 {

@@ -8,7 +8,7 @@ public:
 	Inteiro(int n);
 	~Inteiro();
 	int getValue();
-	Inteiro suc();
+	Inteiro suc(); 
 	Inteiro pred();
 	Inteiro operator+(Inteiro n);
 	Inteiro operator-(Inteiro n);

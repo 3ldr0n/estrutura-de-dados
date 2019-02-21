@@ -1,0 +1,10 @@
+SPEC INTEIRO
+	 SORTS INTEIRO
+	 OPERATIONS: create:				-> INTEIRO 
+	 			 suc: INTEIRO 			-> INTEIRO 
+	 			 pred: INTEIRO 			-> INTEIRO 
+				 soma: INTEIRO INTEIRO 	-> INTEIRO
+				 sub: INTEIRO INTEIRO 	-> INTEIRO
+				 mult: INTEIRO INTEIRO 	-> INTEIRO
+	AXIOMS: 	 sub(pred(X),Y) = pred(sub(X,Y))
+END SPEC
