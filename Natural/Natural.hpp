@@ -1,4 +1,5 @@
-#include <iostream>
+#ifndef NATURAL_H
+#define NATURAL_H
 
 class Natural {
 private:
@@ -8,6 +9,8 @@ public:
 	~Natural();
 	unsigned int getValue();
 	Natural suc();
-	Natural soma(Natural n);
+	Natural operator+(Natural n);
 	Natural mult(Natural n);
 };
+
+#endif

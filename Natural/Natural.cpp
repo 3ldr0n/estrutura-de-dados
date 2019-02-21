@@ -18,7 +18,7 @@ Natural Natural::suc()
 	return n;
 }
 
-Natural Natural::soma(Natural n)
+Natural Natural::operator+(Natural n)
 {
 	Natural s(value + n.getValue());
 	return s;
@@ -32,11 +32,4 @@ Natural Natural::mult(Natural n)
 		return Natural(value);
 	else
 		return Natural(value + mult(n.getValue()-1).getValue());
-}
-
-int main()
-{
-	Natural n(23);
-	std::cout << n.mult(3).suc().getValue() << std::endl;
-	return 0;
 }

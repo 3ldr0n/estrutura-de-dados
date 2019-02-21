@@ -18,19 +18,19 @@ Inteiro Inteiro::suc()
 	return n;
 }
 
-Inteiro Inteiro::sub()
+Inteiro Inteiro::pred()
 {
 	Inteiro n(value - 1);
 	return n;
 }
 
-Inteiro Inteiro::soma(Inteiro n)
+Inteiro Inteiro::operator+(Inteiro n)
 {
 	Inteiro s(value + n.getValue());
 	return s;
 }
 
-Inteiro Inteiro::subt(Inteiro n)
+Inteiro Inteiro::operator-(Inteiro n)
 {
 	Inteiro s(value - n.getValue());
 	return s;
@@ -44,11 +44,4 @@ Inteiro Inteiro::mult(Inteiro n)
 		return Inteiro(value);
 	else
 		return Inteiro(value + mult(n.getValue() - 1).getValue());
-}
-
-int main()
-{
-	Inteiro n(2);
-	std::cout << n.mult(3).getValue() << std::endl;
-	return 0;
 }

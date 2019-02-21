@@ -1,4 +1,5 @@
-#include <iostream>
+#ifndef INTEIRO_H
+#define INTEIRO_H
 
 class Inteiro {
 private:
@@ -8,8 +9,10 @@ public:
 	~Inteiro();
 	int getValue();
 	Inteiro suc();
-	Inteiro sub();
-	Inteiro soma(Inteiro n);
-	Inteiro subt(Inteiro n);
+	Inteiro pred();
+	Inteiro operator+(Inteiro n);
+	Inteiro operator-(Inteiro n);
 	Inteiro mult(Inteiro n);
 };
+
+#endif
