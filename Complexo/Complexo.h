@@ -10,7 +10,7 @@ public:
 	~Complexo();
 	float getReal();
 	float getImaginario();
-	Complexo operator+(float _real, float _imaginario);
+	Complexo soma(float _real, float _imaginario);
 };
 
 #endif

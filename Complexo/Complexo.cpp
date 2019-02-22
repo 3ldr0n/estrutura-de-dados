@@ -15,6 +15,6 @@ float Complexo::getImaginario() {
 	return imaginario;
 }
 
-Complexo Complexo::operator+(float _real, float _imaginario) {
+Complexo Complexo::soma(float _real, float _imaginario) {
 	return Complexo(0, 0);
 }
