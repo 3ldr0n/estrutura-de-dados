@@ -1,4 +1,4 @@
-#include "TadVetor.hpp"
+#include "TadVetor.h"
 
 TadVetor::TadVetor() {
 	for (int i = 0; i < TAMANHO; i++) {
