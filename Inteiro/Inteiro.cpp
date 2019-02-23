@@ -45,3 +45,9 @@ Inteiro Inteiro::mult(Inteiro n)
 	else
 		return Inteiro(value + mult(n.getValue() - 1).getValue());
 }
+
+std::ostream &operator<<(std::ostream &out, Inteiro &n)
+{
+	out << n.getValue() << "\n";
+	return out;
+}
