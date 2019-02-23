@@ -33,3 +33,8 @@ Natural Natural::mult(Natural n)
 	else
 		return Natural(value + mult(n.getValue()-1).getValue());
 }
+
+std::ostream &operator<<(std::ostream &out, Natural &n) {
+	out << n.getValue() << "\n";
+	return out;
+}

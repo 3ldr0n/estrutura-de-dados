@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "Natural.h"
 
 int main()
@@ -8,5 +6,6 @@ int main()
 	Natural y(9);
 	std::cout << (x.suc() + y).getValue() << std::endl;
 	std::cout << (x + y).suc().getValue() << std::endl;
+	std::cout << x;
 	return 0;
 }
