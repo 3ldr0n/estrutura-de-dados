@@ -14,6 +14,7 @@ public:
 	float getImaginario();
 	Complexo operator+(Complexo n);
 	Complexo operator-(Complexo n);
+	Complexo operator*(Complexo n);
 	friend std::ostream &operator<<(std::ostream &out, Complexo &n);
 };
 

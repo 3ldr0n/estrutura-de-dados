@@ -16,11 +16,21 @@ float Complexo::getImaginario() {
 }
 
 Complexo Complexo::operator+(Complexo n) {
-	return Complexo(0, 0);
+	float parte_real = real + n.getReal();
+	float parte_imaginaria = imaginario + n.getImaginario();
+	return Complexo(parte_real, parte_imaginaria);
 }
 
 Complexo Complexo::operator-(Complexo n) {
-	return Complexo(0, 0);
+	float parte_real = real - n.getReal();
+	float parte_imaginaria = imaginario - n.getImaginario();
+	return Complexo(parte_real, parte_imaginaria);
+}
+
+Complexo Complexo::operator*(Complexo n){
+	float r = (real * n.getReal() - imaginario * n.getImaginario());
+	float i = (real * n.getImaginario() + imaginario * n.getReal());
+	return Complexo(r, i);
 }
 
 std::ostream &operator<<(std::ostream &out, Complexo &n)
