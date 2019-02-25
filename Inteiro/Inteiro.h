@@ -18,5 +18,4 @@ public:
 	friend std::ostream &operator<<(std::ostream &out, Inteiro &n);
 };
 
-
 #endif

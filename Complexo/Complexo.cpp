@@ -15,6 +15,16 @@ float Complexo::getImaginario() {
 	return imaginario;
 }
 
-Complexo Complexo::soma(float _real, float _imaginario) {
+Complexo Complexo::operator+(Complexo n) {
 	return Complexo(0, 0);
+}
+
+Complexo Complexo::operator-(Complexo n) {
+	return Complexo(0, 0);
+}
+
+std::ostream &operator<<(std::ostream &out, Complexo &n)
+{
+	out << n.getReal() << " + " << n.getImaginario() << "i";
+	return out;
 }
