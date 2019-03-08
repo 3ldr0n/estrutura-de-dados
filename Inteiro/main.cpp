@@ -1,11 +1,12 @@
-#include "Inteiro.h"
+#include "../Inteiro.h"
 
 int main()
 {
-	Inteiro x(9);
-	Inteiro y(-19);
-	std::cout << (x.pred() - y).getValue() << std::endl;
-	std::cout << (x - y).pred().getValue() << std::endl;
-	std::cout << x;
+	Inteiro x(9, '+'); 
+	Inteiro y(19, '-');
+	Inteiro axioma0 = (Inteiro) x.pred() - y;
+	Inteiro axioma1 = (Inteiro) (x - y);
+	std::cout << axioma0 << std::endl;
+	std::cout << axioma1 << std::endl;
 	return 0;
 }

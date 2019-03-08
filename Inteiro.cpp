@@ -1,53 +1,31 @@
 #include "Inteiro.h"
 
-Inteiro::Inteiro(int n)
-{
-	value = n;
-}
+Inteiro::Inteiro(int n, char  sinal):Racional(n, 1, sinal)
+{}
 
 Inteiro::~Inteiro(){}
 
-int Inteiro::getValue()
+int Inteiro::getValor()
 {
-	return value;
+	return getA();
 }
 
 Inteiro Inteiro::suc()
 {
-	Inteiro n(value + 1);
+	int v = getA();
+	Inteiro n(abs(v + 1), v<0?'-':'+');
 	return n;
 }
 
 Inteiro Inteiro::pred()
 {
-	Inteiro n(value - 1);
+	int v = getA();
+	Inteiro n((v - 1), v<0?'-':'+');
 	return n;
-}
-
-Inteiro Inteiro::operator+(Inteiro n)
-{
-	Inteiro s(value + n.getValue());
-	return s;
-}
-
-Inteiro Inteiro::operator-(Inteiro n)
-{
-	Inteiro s(value - n.getValue());
-	return s;
-}
-
-Inteiro Inteiro::mult(Inteiro n)
-{
-	if (n.getValue() == 0)
-		return Inteiro(0);
-	else if (n.getValue() == 1)
-		return Inteiro(value);
-	else
-		return Inteiro(value + mult(n.getValue() - 1).getValue());
 }
 
 std::ostream &operator<<(std::ostream &out, Inteiro &n)
 {
-	out << n.getValue() << "\n";
+	out << n.getValor() << "\n";
 	return out;
 }
