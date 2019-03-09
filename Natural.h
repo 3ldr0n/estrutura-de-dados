@@ -1,18 +1,12 @@
 #ifndef NATURAL_H
 #define NATURAL_H
 
-#include <iostream>
+#include "Inteiro.h"
 
-class Natural {
-private:
-	unsigned int value;
+class Natural:public Inteiro {
 public:
-	Natural(unsigned int n);
+	Natural(int n);
 	~Natural();
-	unsigned int getValue();
-	Natural suc();
-	Natural operator+(Natural n);
-	Natural mult(Natural n);
 	friend std::ostream &operator<<(std::ostream &out, Natural &n);
 };
 

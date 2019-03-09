@@ -2,8 +2,9 @@ CC=g++
 CFLAGS+=-Wall -Wextra
 BIN_DIR=bin
 
-%:
-	$(CC) $(CFLAGS) $@/$@.cpp $@/main.cpp -o $(BIN_DIR)/$@
+main:
+	mkdir -p bin
+	$(CC) $(CFLAGS) Racional.cpp Inteiro.cpp Natural.cpp main.cpp -o bin/main
 
 .PHONY: clean
 

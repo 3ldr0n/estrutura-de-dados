@@ -2,7 +2,6 @@
 #define INTEIRO_H
 
 #include "Racional.h"
-#include <iostream>
 
 class Inteiro:public Racional {
 public:

@@ -1,7 +1,6 @@
 #include "Inteiro.h"
 
-Inteiro::Inteiro(int n, char  sinal):Racional(n, 1, sinal)
-{}
+Inteiro::Inteiro(int n, char  sinal):Racional(n, 1, sinal){}
 
 Inteiro::~Inteiro(){}
 
@@ -26,6 +25,6 @@ Inteiro Inteiro::pred()
 
 std::ostream &operator<<(std::ostream &out, Inteiro &n)
 {
-	out << n.getValor() << "\n";
+	out << n.getValor();
 	return out;
 }
