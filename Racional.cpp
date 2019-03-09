@@ -11,12 +11,12 @@ Racional::Racional(int va, int vb, char sinal)
 
 Racional::~Racional(){}
 
-float Racional::getA()
+int Racional::getA()
 {
 	return a;
 }
 
-float Racional::getB()
+int Racional::getB()
 {
 	return b;
 }

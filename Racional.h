@@ -11,8 +11,8 @@ private:
 public:
 	Racional(int va, int vb, char sinal);
 	~Racional();
-	float getA();
-	float getB();
+	int getA();
+	int getB();
 	Racional operator+(Racional n);
 	Racional operator-(Racional n);
 	Racional operator*(Racional n);
