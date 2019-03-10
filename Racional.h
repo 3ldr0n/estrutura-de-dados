@@ -7,7 +7,6 @@ class Racional {
 private:
 	int a;
 	int b;
-	char sinal;
 public:
 	Racional(int va, int vb, char sinal);
 	~Racional();
