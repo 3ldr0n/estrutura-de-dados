@@ -1,10 +1,10 @@
 CC=clang
-CFLAGS+=-Wall -Wextra -Werror
+CFLAGS+=-Wall -Wextra -Werror -lstdc++
 BIN_DIR=bin
 
 main:
 	mkdir -p bin
-	$(CC) $(CFLAGS) -lstdc++ Racional.cpp Inteiro.cpp Natural.cpp main.cpp -o bin/main
+	$(CC) $(CFLAGS) Racional.cpp Inteiro.cpp Natural.cpp main.cpp -o bin/main
 
 .PHONY: clean
 
