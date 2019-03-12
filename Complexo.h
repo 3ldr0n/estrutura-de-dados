@@ -5,13 +5,13 @@
 
 class Complexo {
 private:
-	float real;
-	float imaginario;
+	double real;
+	double imaginario;
 public:
-	Complexo(float _real, float _imaginario);
+	Complexo(double _real, double _imaginario);
 	~Complexo();
-	float getReal();
-	float getImaginario();
+	double getReal();
+	double getImaginario();
 	Complexo operator+(Complexo n);
 	Complexo operator-(Complexo n);
 	Complexo operator*(Complexo n);
