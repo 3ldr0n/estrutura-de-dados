@@ -4,7 +4,7 @@ BIN_DIR=bin
 
 main:
 	mkdir -p bin
-	$(CC) $(CFLAGS) Racional.cpp Inteiro.cpp Natural.cpp main.cpp -o bin/main
+	$(CC) $(CFLAGS) Complexo.cpp Real.cpp Racional.cpp Inteiro.cpp Natural.cpp main.cpp -o bin/main
 
 .PHONY: clean
 
