@@ -7,8 +7,8 @@ int main()
 	Natural y(9);
 	Inteiro n(13, '-');
 	Inteiro m(16, '+');
-	Racional p(1, 2, '-');
-	Racional q(3, 4, '+');
+	Racional p(0.5, '-');
+	Racional q(0.75, '+');
 	Real a(5.123123123, '+');
 	Real b(3.141592653, '+');
 
@@ -21,7 +21,7 @@ int main()
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 
-	Racional mult = p * y;
+	Real mult = p * y;
 	std::cout << mult << std::endl;
 
 	return 0;
