@@ -1,6 +1,6 @@
 #include "Inteiro.h"
 
-Inteiro::Inteiro(int n, char  sinal):Racional(n, sinal){}
+Inteiro::Inteiro(int n, char  sinal):Racional(n, 1, sinal){}
 
 Inteiro::~Inteiro(){}
 
