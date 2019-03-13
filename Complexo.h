@@ -2,13 +2,14 @@
 #define COMPLEXO_H
 
 #include <iostream>
+#include <stdlib.h>
 
 class Complexo {
 private:
 	double real;
 	double imaginario;
 public:
-	Complexo(double _real, double _imaginario);
+	Complexo(double _real, char sinal_real, double _imaginario, char sinal_imaginario);
 	~Complexo();
 	double getReal();
 	double getImaginario();

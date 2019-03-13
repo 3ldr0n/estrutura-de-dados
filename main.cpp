@@ -1,5 +1,4 @@
 #include "Natural.h"
-#include "Real.h"
 
 int main()
 {
@@ -11,18 +10,32 @@ int main()
 	Racional q(3, 4, '+');
 	Real a(5.123123123, '+');
 	Real b(3.141592653, '+');
+	Complexo c(1, '+', 2, '-');
+	Complexo d(12.123, '+', 9, '+');
 
-	std::cout << x << std::endl;
-	std::cout << y << std::endl;
-	std::cout << n << std::endl;
-	std::cout << m << std::endl;
-	std::cout << p << std::endl;
-	std::cout << q << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
+	std::cout << "Natural x: " << x << std::endl;
+	std::cout << "Natural y: " << y << std::endl;
+	std::cout << "Inteiro n: " << n << std::endl;
+	std::cout << "Inteiro m: " << m << std::endl;
+	std::cout << "Racional p: " << p << std::endl;
+	std::cout << "Racional q: " << q << std::endl;
+	std::cout << "Real a: " << a << std::endl;
+	std::cout << "Real b: " << b << std::endl;
+	std::cout << "Complexo c: " << c << std::endl;
+	std::cout << "Complexo d: " << d << std::endl;
 
-	Real mult = p * y;
-	std::cout << mult << std::endl;
+	Complexo soma = x * y;
+	Complexo sub = b - q;
+	Complexo mult = n * m;
+	Complexo div = a / p;
+	Complexo soma_complexos = c + d;
+	
+	std::cout << "\nTestes" << std::endl;
+	std::cout << "x * y: " << soma.getReal() << std::endl;
+	std::cout << "b - q: " << sub.getReal() << std::endl;
+	std::cout << "n * m: " << mult.getReal() << std::endl;
+	std::cout << "a / p: " << div.getReal() << std::endl;
+	std::cout << "c + d: " << soma_complexos << std::endl;
 
 	return 0;
 }
