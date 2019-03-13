@@ -1,6 +1,6 @@
 #include "Racional.h"
 
-Racional::Racional(double v, char sinal):Real(v, sinal)
+Racional::Racional(int a,  int b, char sinal):Real(a/(double)b, sinal)
 {}
 
 Racional::~Racional(){}
