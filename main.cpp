@@ -1,5 +1,4 @@
 #include "Natural.h"
-#include "Real.h"
 
 int main()
 {
@@ -21,8 +20,8 @@ int main()
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 
-	Real mult = p * y;
-	std::cout << mult << std::endl;
+	Complexo mult = p * y;
+	std::cout << mult.getReal() << std::endl;
 
 	return 0;
 }
