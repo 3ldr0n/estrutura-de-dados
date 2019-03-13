@@ -24,7 +24,6 @@ int main()
 	std::cout << "Complexo c: " << c << std::endl;
 	std::cout << "Complexo d: " << d << std::endl;
 
-<<<<<<< HEAD
 	Complexo soma = x * y;
 	Complexo sub = b - q;
 	Complexo mult = n * m;
@@ -37,10 +36,6 @@ int main()
 	std::cout << "n * m: " << mult.getReal() << std::endl;
 	std::cout << "a / p: " << div.getReal() << std::endl;
 	std::cout << "c + d: " << soma_complexos << std::endl;
-=======
-	Complexo mult = p * y;
-	std::cout << mult.getReal() << std::endl;
->>>>>>> 3cad66b93eb6073586c50efb9d179e190bd9d899
 
 	return 0;
 }
