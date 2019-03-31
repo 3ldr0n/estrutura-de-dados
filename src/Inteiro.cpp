@@ -12,14 +12,14 @@ int Inteiro::getValor()
 Inteiro Inteiro::suc()
 {
 	int v = getValor();
-	Inteiro n(abs(v + 1), v<0?'-':'+');
+	Inteiro n(std::abs(v + 1), v<0?'-':'+');
 	return n;
 }
 
 Inteiro Inteiro::pred()
 {
 	int v = getValor();
-	Inteiro n((v - 1), v<0?'-':'+');
+	Inteiro n(std::abs(v - 1), v<0?'-':'+');
 	return n;
 }
 

@@ -13,7 +13,7 @@ double Real::getValor()
 Real Real::operator/(Real n)
 {
 	double div = getReal() / n.getValor();
-	return Real(abs(div), div<0?'-':'+');
+	return Real(std::abs(div), div<0?'-':'+');
 }
 
 std::ostream &operator<<(std::ostream &out, Real &n)

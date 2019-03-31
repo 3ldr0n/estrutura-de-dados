@@ -7,6 +7,7 @@ class Natural:public Inteiro {
 public:
 	Natural(int n);
 	~Natural();
+    Inteiro pred();
 	friend std::ostream &operator<<(std::ostream &out, Natural &n);
 };
 
