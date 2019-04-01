@@ -8,6 +8,9 @@ main:
 	mkdir -p bin
 	$(CC) $(CFLAGS) $(SRC) -o bin/main
 
+triangulo:
+	$(CC) $(CFLAGS) src/Triangulo.cpp src/triangulo_main.cpp -o bin/triangulo_main
+
 .PHONY: clean
 
 clean:
