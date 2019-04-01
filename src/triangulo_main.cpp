@@ -15,7 +15,9 @@ void menu()
 
 int main()
 {
-    std::vector<Triangulo> triangulos;
+    Triangulo t0 = Triangulo(0, 0, 0);
+    std::vector<Triangulo> triangulos {t0, t0, t0, t0, t0,
+                                       t0, t0, t0, t0, t0};
     int option = -1;
     menu();
     std::cout << ">> ";
@@ -29,7 +31,14 @@ int main()
         switch(option) {
         case 1:
         {
-            float base, altura, c;
+            if (triangulos.size() > 10) {
+                std::cout << "Número maximo atingido." << std::endl;
+                break;
+            }
+
+            float base, altura, c, indice;
+            std::cout << "Indice: " << std::endl;
+            std::cin >> indice;
             std::cout << "Base: " << std::endl;
             std::cin >> base;
             std::cout << "Altura: " << std::endl;
@@ -41,9 +50,10 @@ int main()
                 std::cout << BEGIN_RED << "\nValores inválidos" << END_RED << std::endl;
                 break;
             }
-            
+
             Triangulo t(base, altura, c);
-            triangulos.push_back(t);
+            triangulos[indice] = t;
+            std::cout << triangulos.at(indice) << std::endl;
             break;
         }
         case 2:

@@ -30,6 +30,17 @@ float Triangulo::calcularArea()
     return (base * altura) / 2;
 }
 
+float Triangulo::getArea()
+{
+    return area;
+}
+
+float Triangulo::operator+(Triangulo t)
+{
+    float soma = area + t.getArea();
+    return soma;
+}
+
 std::ostream &operator<<(std::ostream &out, Triangulo &t)
 {
 	out << "Base: " << t.getBase();

@@ -14,7 +14,7 @@ public:
     float getAltura();
     float getC();
     float getArea();
-    Triangulo operator+(Triangulo t);
+    float operator+(Triangulo t);
     friend std::ostream &operator<<(std::ostream &out, Triangulo &t);
 };
 
