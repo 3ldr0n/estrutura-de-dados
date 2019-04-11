@@ -11,6 +11,9 @@ main:
 triangulo:
 	$(CC) $(CFLAGS) src/Triangulo.cpp src/triangulo_main.cpp -o bin/triangulo_main
 
+vetor:
+	$(CC) $(CFLAGS) src/Vetor.cpp src/main_vetor.cpp -o bin/vetor
+
 .PHONY: clean
 
 clean:
