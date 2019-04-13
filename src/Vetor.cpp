@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "Vetor.h"
 
 template <typename T>
@@ -64,7 +62,7 @@ void Vetor<T>::remove(int i)
 }
 
 template <typename T>
-Vetor<T> Vetor<T>::operator+(Vetor<T> ve)
+Vetor<T> Vetor<T>::agrupamento(Vetor<T> ve)
 {
     Vetor vb(tam + ve.tamanho());
 
@@ -73,10 +71,19 @@ Vetor<T> Vetor<T>::operator+(Vetor<T> ve)
         vb.insere(v[i], i);
     }
 
-    for (int j = 0; i < ve.tamanho();j++) {
+    for (int j = 0; i < vb.tamanho();j++) {
         vb.insere(ve.elemento(j), i);
         i++;
     }
 
     return vb;
+}
+
+template <typename T>
+void Vetor<T>::print()
+{
+    for (int i = 0;i < tam;i++)
+        std::cout << v[i] << " ";
+
+    std::cout << std::endl;
 }

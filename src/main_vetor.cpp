@@ -1,5 +1,4 @@
-#include "Vetor.h"
-#include <iostream>
+#include "Vetor.cpp"
 
 int main()
 {
@@ -10,6 +9,24 @@ int main()
     v.insere(4, 3);
     v.insere(5, 4);
 
-    std::cout << v.elemento(0) << std::endl;
+    Vetor<int> c(5);
+    c.insere(6, 0);
+    c.insere(7, 1);
+    c.insere(8, 2);
+    c.insere(9, 3);
+    c.insere(10, 4);
+
+    Vetor<int> x(3);
+    x.insere(11, 0);
+    x.insere(12, 1);
+    x.insere(13, 2);
+
+    v.print();
+    c.print();
+    x.print();
+    v.agrupamento(c)
+        .agrupamento(x)
+        .print();
+
     return 0;
 }

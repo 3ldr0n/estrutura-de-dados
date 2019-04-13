@@ -1,6 +1,8 @@
 #ifndef VETOR_H
 #define VETOR_H
 
+#include <iostream>
+
 template <typename T>
 class Vetor {
 private:
@@ -14,7 +16,8 @@ public:
     bool procura(T elem);
     void insere(T elem, int i);
     void remove(int i);
-    Vetor<T> operator+(Vetor ve);
+    Vetor<T> agrupamento(Vetor<T> ve);
+    void print();
 };
 
 #endif
