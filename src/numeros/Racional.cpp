@@ -1,4 +1,4 @@
-#include "Racional.h"
+#include "numeros/Racional.h"
 
 Racional::Racional(int a,  int b, char sinal):Real(a/(double)b, sinal)
 {}

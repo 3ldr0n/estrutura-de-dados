@@ -1,4 +1,4 @@
-#include "Inteiro.h"
+#include "numeros/Inteiro.h"
 
 Inteiro::Inteiro(int n, char  sinal):Racional(n, 1, sinal){}
 

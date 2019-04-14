@@ -2,17 +2,20 @@ CC=clang
 CFLAGS+=-Wall -Wextra -Werror -lstdc++ -I./include
 BIN_DIR=bin
 SRC_DIR=src
-SRC:=$(wildcard $(SRC_DIR)/*.cpp)
+NUM_DIR=$(SRC_DIR)/numeros
+EST_DIR=$(SRC_DIR)/estruturas
+NUMEROS_SRC:=$(wildcard $(NUM_DIR)/*.cpp)
 
-main:
+numeros:
 	mkdir -p bin
-	$(CC) $(CFLAGS) $(SRC) -o bin/main
+	$(CC) $(CFLAGS) $(NUMEROS_SRC) -o bin/num_main
 
-triangulo:
-	$(CC) $(CFLAGS) src/Triangulo.cpp src/triangulo_main.cpp -o bin/triangulo_main
+estruturas: vetor
 
 vetor:
-	$(CC) $(CFLAGS) src/Vetor.cpp src/main_vetor.cpp -o bin/vetor
+	mkdir -p bin
+	$(CC) $(CFLAGS) $(EST_DIR)/Vetor.cpp $(EST_DIR)/main_vetor.cpp \
+					-o bin/vetor
 
 .PHONY: clean
 

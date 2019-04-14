@@ -1,4 +1,4 @@
-#include "Natural.h"
+#include "numeros/Natural.h"
 
 Natural::Natural(int n):Inteiro(n, '+'){}
 

@@ -1,4 +1,4 @@
-#include "Complexo.h"
+#include "numeros/Complexo.h"
 
 Complexo::Complexo(double _real, char sinal_real, double _imaginario, char sinal_imaginario) {
 	if (sinal_real == '+')

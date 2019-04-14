@@ -1,4 +1,4 @@
-#include "Vetor.h"
+#include "estruturas/Vetor.h"
 
 template <typename T>
 Vetor<T>::Vetor(int t)
@@ -36,7 +36,7 @@ bool Vetor<T>::procura(T elem)
         if (v[i] == elem)
             return true;
     }
-    
+
     return false;
 }
 
