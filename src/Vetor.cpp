@@ -64,19 +64,19 @@ void Vetor<T>::remove(int i)
 template <typename T>
 Vetor<T> Vetor<T>::agrupamento(Vetor<T> ve)
 {
-    Vetor vb(tam + ve.tamanho());
+    Vetor vs(tam + ve.tamanho());
 
     int i;
     for (i = 0; i < tam;i++) {
-        vb.insere(v[i], i);
+        vs.insere(v[i], i);
     }
 
-    for (int j = 0; i < vb.tamanho();j++) {
-        vb.insere(ve.elemento(j), i);
+    for (int j = 0; i < vs.tamanho();j++) {
+        vs.insere(ve.elemento(j), i);
         i++;
     }
 
-    return vb;
+    return vs;
 }
 
 template <typename T>

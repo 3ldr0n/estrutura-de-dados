@@ -24,6 +24,7 @@ int main()
     v.print();
     c.print();
     x.print();
+
     v.agrupamento(c)
         .agrupamento(x)
         .print();
