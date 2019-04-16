@@ -21,7 +21,7 @@ int Vetor<T>::tamanho()
 }
 
 template <typename T>
-T Vetor<T>::elemento(int i)
+T Vetor<T>::operator[](int i)
 {
     if (i < 0 || i >= tam)
         throw new std::string("Indice invalido.");
@@ -62,9 +62,9 @@ void Vetor<T>::remove(int i)
 }
 
 template <typename T>
-Vetor<T> Vetor<T>::agrupamento(Vetor<T> ve)
+void Vetor<T>::agrupamento(Vetor<T> ve)
 {
-    Vetor vs(tam + ve.tamanho());
+    Vetor<T> vs(tam + ve.tamanho());
 
     int i;
     for (i = 0; i < tam;i++) {
@@ -72,11 +72,17 @@ Vetor<T> Vetor<T>::agrupamento(Vetor<T> ve)
     }
 
     for (int j = 0; i < vs.tamanho();j++) {
-        vs.insere(ve.elemento(j), i);
+        vs.insere(ve[j], i);
         i++;
     }
 
-    return vs;
+    delete v;
+    v = new T[vs.tamanho()];
+    tam = vs.tamanho();
+
+    for (i = 0;i < vs.tamanho();i++) {
+        v[i] = vs[i];
+    }
 }
 
 template <typename T>

@@ -25,9 +25,9 @@ int main()
     c.print();
     x.print();
 
-    v.agrupamento(c)
-        .agrupamento(x)
-        .print();
+    v.agrupamento(c);
+    v.agrupamento(x);
+    v.print();
 
     return 0;
 }
