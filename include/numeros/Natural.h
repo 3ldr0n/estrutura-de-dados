@@ -5,6 +5,7 @@
 
 class Natural:public Inteiro {
 public:
+	Natural();
 	Natural(int n);
 	~Natural();
     Inteiro pred();

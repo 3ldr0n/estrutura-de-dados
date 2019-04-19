@@ -9,6 +9,7 @@ private:
 	double real;
 	double imaginario;
 public:
+	Complexo();
 	Complexo(double _real, char sinal_real, double _imaginario, char sinal_imaginario);
 	~Complexo();
 	double getReal();

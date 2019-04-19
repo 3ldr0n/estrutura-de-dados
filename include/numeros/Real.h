@@ -5,6 +5,7 @@
 
 class Real:public Complexo {
 public:
+	Real();
 	Real(double v, char sinal);
 	~Real();
 	double getValor();

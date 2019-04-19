@@ -1,7 +1,8 @@
 #include "numeros/Real.h"
 
-Real::Real(double v, char sinal):Complexo(v,sinal,0,'-')
-{}
+Real::Real():Complexo(){}
+
+Real::Real(double v, char sinal):Complexo(v,sinal,0,'-'){}
 
 Real::~Real(){}
 

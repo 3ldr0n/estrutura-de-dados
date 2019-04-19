@@ -1,6 +1,6 @@
 #include "estruturas/Vetor.h"
 
-template <typename T>
+template <class T>
 Vetor<T>::Vetor(int t)
 {
     v = new T[t];
@@ -9,18 +9,18 @@ Vetor<T>::Vetor(int t)
     tam = t;
 }
 
-template <typename T>
+template <class T>
 Vetor<T>::~Vetor(){
     delete v;
 }
 
-template <typename T>
+template <class T>
 int Vetor<T>::tamanho()
 {
     return tam;
 }
 
-template <typename T>
+template <class T>
 T Vetor<T>::operator[](int i)
 {
     if (i < 0 || i >= tam)
@@ -29,7 +29,7 @@ T Vetor<T>::operator[](int i)
     return v[i];
 }
 
-template <typename T>
+template <class T>
 bool Vetor<T>::procura(T elem)
 {
     for (int i = 0;i < tam;i++) {
@@ -40,7 +40,7 @@ bool Vetor<T>::procura(T elem)
     return false;
 }
 
-template <typename T>
+template <class T>
 void Vetor<T>::insere(T elem, int i)
 {
     if (i < 0 || i >= tam)
@@ -49,7 +49,7 @@ void Vetor<T>::insere(T elem, int i)
     v[i] = elem;
 }
 
-template <typename T>
+template <class T>
 void Vetor<T>::remove(int i)
 {
     if (i < 0 || i >= tam)
@@ -61,7 +61,7 @@ void Vetor<T>::remove(int i)
     v[tam - 1] = NULL;
 }
 
-template <typename T>
+template <class T>
 void Vetor<T>::agrupamento(Vetor<T> ve)
 {
     Vetor<T> vs(tam + ve.tamanho());
@@ -85,7 +85,7 @@ void Vetor<T>::agrupamento(Vetor<T> ve)
     }
 }
 
-template <typename T>
+template <class T>
 void Vetor<T>::print()
 {
     for (int i = 0;i < tam;i++)

@@ -16,6 +16,18 @@ vetor:
 	mkdir -p bin
 	$(CC) $(CFLAGS) $(EST_DIR)/Vetor.cpp $(EST_DIR)/main_vetor.cpp \
 					-o bin/vetor
+vetor_numeros:
+	mkdir -p bin
+	$(CC) $(CFLAGS) $(NUM_DIR)/Natural.cpp $(NUM_DIR)/Inteiro.cpp \
+ 					$(NUM_DIR)/Racional.cpp $(NUM_DIR)/Real.cpp \
+ 					$(NUM_DIR)/Complexo.cpp \
+					$(EST_DIR)/Vetor.cpp $(EST_DIR)/main_vetor.cpp \
+					-o bin/vetor
+
+lista_ligada:
+	mkdir -p bin
+	$(CC) $(CFLAGS) $(EST_DIR)/ListaLigada.cpp $(EST_DIR)/main_lista_ligada.cpp \
+					-o bin/listaLigada
 
 .PHONY: clean
 

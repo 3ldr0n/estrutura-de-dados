@@ -1,5 +1,7 @@
 #include "numeros/Complexo.h"
 
+Complexo::Complexo(){}
+
 Complexo::Complexo(double _real, char sinal_real, double _imaginario, char sinal_imaginario) {
 	if (sinal_real == '+')
 		real = _real;

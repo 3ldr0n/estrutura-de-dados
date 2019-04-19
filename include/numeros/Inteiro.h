@@ -5,6 +5,7 @@
 
 class Inteiro:public Racional {
 public:
+	Inteiro();
 	Inteiro(int n, char sinal);
 	~Inteiro();
 	int getValor();

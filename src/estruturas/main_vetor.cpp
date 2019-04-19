@@ -1,5 +1,7 @@
 #include "Vetor.cpp"
 
+#include "numeros/Natural.h"
+
 int main()
 {
     Vetor<int> v(5);
@@ -28,6 +30,8 @@ int main()
     v.agrupamento(c);
     v.agrupamento(x);
     v.print();
+
+    Vetor<Natural> b(6);
 
     return 0;
 }

@@ -1,5 +1,7 @@
 #include "numeros/Natural.h"
 
+Natural::Natural():Inteiro(){}
+
 Natural::Natural(int n):Inteiro(n, '+'){}
 
 Natural::~Natural(){}

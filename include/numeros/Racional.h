@@ -5,6 +5,7 @@
 
 class Racional:public Real {
 public:
+	Racional();
 	Racional(int a, int b, char sinal);
 	~Racional();
 	friend std::ostream &operator<<(std::ostream &out, Racional &n);
