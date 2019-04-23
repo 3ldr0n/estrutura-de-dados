@@ -27,11 +27,11 @@ const E& ListaLigada<E>::inicio() const
 template <typename E>
 void insereInicio(const E& e)
 {
-    
+    return;
 }
 
 template <typename E>
 void removeInicio()
 {
-    
+    return;
 }

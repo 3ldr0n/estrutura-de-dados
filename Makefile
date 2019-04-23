@@ -26,8 +26,7 @@ vetor_numeros:
 
 lista_ligada:
 	mkdir -p bin
-	$(CC) $(CFLAGS) $(EST_DIR)/ListaLigada.cpp $(EST_DIR)/main_lista_ligada.cpp \
-					-o bin/listaLigada
+	$(CC) $(CFLAGS) $(EST_DIR)/main_lista_ligada.cpp -o bin/listaLigada
 
 .PHONY: clean
 

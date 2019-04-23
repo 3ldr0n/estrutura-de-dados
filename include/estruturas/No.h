@@ -4,7 +4,7 @@
 template <typename E>
 class No {
 private:
-    E *elem;
+    E elem;
     No<E> *prox;
     friend class ListaLigada<E>;
 };
