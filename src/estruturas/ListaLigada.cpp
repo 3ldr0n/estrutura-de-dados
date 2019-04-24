@@ -1,5 +1,7 @@
 #include "estruturas/ListaLigada.h"
 
+#include <iostream>
+
 template <typename E>
 ListaLigada<E>::ListaLigada()
 {
@@ -25,13 +27,35 @@ const E& ListaLigada<E>::inicio() const
 }
 
 template <typename E>
-void insereInicio(const E& e)
+void ListaLigada<E>::insereInicio(const E& e)
 {
-    return;
+    No<E> *novo = new No<E>();
+    novo->elem = e;
+    novo->prox = cabeca;
+    cabeca = novo;
 }
 
 template <typename E>
-void removeInicio()
+void ListaLigada<E>::removeInicio()
 {
-    return;
+    if (!vazia())
+        cabeca = cabeca->prox;
+}
+
+template <typename E>
+void ListaLigada<E>::insereFinal(const E &e)
+{
+
+}
+
+template <typename E>
+void ListaLigada<E>::print() const
+{
+    No<E> *aux = new No<E>();
+    aux = cabeca;
+    while (aux->prox != NULL) {
+        std::cout << aux->elem << " ";
+        aux = aux->prox;
+    }
+    std::cout << std::endl;
 }

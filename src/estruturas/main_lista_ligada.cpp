@@ -1,9 +1,18 @@
 #include "ListaLigada.cpp"
 
-#include <iostream>
-
 int main()
 {
-    std::cout << "kkkeaeman" << std::endl;
+    ListaLigada<int> lista;
+    lista.insereInicio(4);
+    lista.insereInicio(5);
+    lista.insereInicio(6);
+    lista.insereInicio(7);
+    lista.insereInicio(8);
+    lista.insereInicio(9);
+    lista.removeInicio();
+    lista.removeInicio();
+
+    lista.print();
+
     return 0;
 }

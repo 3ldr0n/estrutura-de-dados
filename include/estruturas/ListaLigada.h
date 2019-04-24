@@ -14,6 +14,10 @@ public:
     const E& inicio() const;
     void insereInicio(const E& e);
     void removeInicio();
+    void insereFinal(const E& e);
+    void removeFinal();
+    void inverte();
+    void print() const;
 };
 
 #endif
