@@ -79,6 +79,9 @@ void ListaLigada<E>::removeFinal()
 template <typename E>
 void ListaLigada<E>::print() const
 {
+    if (vazia())
+        return;
+
     No<E> *aux = cabeca;
     while (aux != NULL) {
         std::cout << aux->elem << " ";
