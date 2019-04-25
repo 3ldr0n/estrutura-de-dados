@@ -3,7 +3,7 @@
 
 #include "estruturas/No.h"
 
-template <typename E>
+template <class E>
 class ListaLigada {
 private:
     No<E> *cabeca;

@@ -2,32 +2,42 @@
 
 #include <iostream>
 
-template <typename E>
+template <class E>
 ListaLigada<E>::ListaLigada()
 {
     cabeca = NULL;
 }
 
-template <typename E>
+template <class E>
 ListaLigada<E>::~ListaLigada()
 {
     if (!vazia())
         delete cabeca;
 }
 
-template <typename E>
+template <class E>
 bool ListaLigada<E>::vazia() const
 {
     return cabeca == NULL;
 }
 
-template <typename E>
+template <class E>
 const E& ListaLigada<E>::inicio() const
 {
     return cabeca->elem;
 }
 
-template <typename E>
+template <class E>
+const E& ListaLigada<E>::fim() const
+{
+    No<E> *aux = cabeca;
+    while (aux->prox != NULL)
+        aux = aux->prox;
+
+    return aux->elem;
+}
+
+template <class E>
 void ListaLigada<E>::insereInicio(const E& e)
 {
     No<E> *novo = new No<E>();
@@ -36,7 +46,7 @@ void ListaLigada<E>::insereInicio(const E& e)
     cabeca = novo;
 }
 
-template <typename E>
+template <class E>
 void ListaLigada<E>::removeInicio()
 {
     if (vazia())
@@ -51,7 +61,7 @@ void ListaLigada<E>::removeInicio()
     delete aux;
 }
 
-template <typename E>
+template <class E>
 void ListaLigada<E>::insereFinal(const E &e)
 {
     No<E> *novo = new No<E>();
@@ -65,7 +75,7 @@ void ListaLigada<E>::insereFinal(const E &e)
     aux->prox = novo;
 }
 
-template <typename E>
+template <class E>
 void ListaLigada<E>::removeFinal()
 {
     No<E> *aux = cabeca;
@@ -76,7 +86,21 @@ void ListaLigada<E>::removeFinal()
     aux->prox = NULL;
 }
 
-template <typename E>
+template <class E>
+void ListaLigada<E>::inverte()
+{
+    No<E> *aux = cabeca;
+    ListaLigada<E> invertida;
+    while (aux != NULL) {
+        invertida.insereInicio(aux->elem);
+        aux = aux->prox;
+        removeInicio();
+    }
+
+    cabeca = invertida.cabeca;
+}
+
+template <class E>
 void ListaLigada<E>::print() const
 {
     if (vazia())
@@ -89,14 +113,4 @@ void ListaLigada<E>::print() const
     }
 
     std::cout << std::endl;
-}
-
-template <typename E>
-const E& ListaLigada<E>::fim() const
-{
-    No<E> *aux = cabeca;
-    while (aux->prox != NULL)
-        aux = aux->prox;
-
-    return aux->elem;
 }

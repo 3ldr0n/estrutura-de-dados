@@ -1,10 +1,10 @@
 #ifndef NO_H
 #define NO_H
 
-template <typename E>
+template <class E>
 class ListaLigada;
 
-template <typename E>
+template <class E>
 class No {
 private:
     E elem;
