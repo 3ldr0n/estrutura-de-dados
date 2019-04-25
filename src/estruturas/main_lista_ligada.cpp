@@ -7,12 +7,13 @@ int main()
     lista.insereInicio(5);
     lista.insereInicio(6);
     lista.insereInicio(7);
-    lista.insereInicio(8);
-    lista.insereInicio(9);
-    lista.removeInicio();
-    lista.removeInicio();
+    lista.insereFinal(10);
+    lista.removeFinal();
+    lista.removeFinal();
 
     lista.print();
+
+    std::cout << lista.fim() << std::endl;
 
     return 0;
 }
