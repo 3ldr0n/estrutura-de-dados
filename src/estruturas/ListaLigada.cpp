@@ -16,6 +16,12 @@ ListaLigada<E>::~ListaLigada()
 }
 
 template <class E>
+No<E> *ListaLigada<E>::getCabeca() const
+{
+    return cabeca;
+}
+
+template <class E>
 bool ListaLigada<E>::vazia() const
 {
     return cabeca == NULL;
@@ -97,7 +103,9 @@ void ListaLigada<E>::inverte()
         removeInicio();
     }
 
-    cabeca = invertida.cabeca;
+    cabeca = new No<E>();
+    cabeca->elem = invertida.inicio();
+    cabeca->prox = invertida.getCabeca()->prox;
 }
 
 template <class E>

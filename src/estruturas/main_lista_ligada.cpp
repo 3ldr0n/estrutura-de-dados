@@ -17,6 +17,7 @@ int main()
     std::cout << lista.fim() << std::endl;
 
     lista.inverte();
+    lista.print();
 
     return 0;
 }

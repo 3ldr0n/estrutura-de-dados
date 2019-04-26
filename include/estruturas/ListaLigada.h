@@ -10,6 +10,7 @@ private:
 public:
     ListaLigada();
     ~ListaLigada();
+    No<E> *getCabeca() const;
     bool vazia() const;
     const E& inicio() const;
     const E& fim() const;
