@@ -13,6 +13,9 @@ int main()
     lista.insereInicio(8);
     lista.removeInicio();
     lista.removeInicio();
+    lista.insereFinal(9);
+    lista.removeFinal();
+    lista.removeFinal();
 
     lista.print();
 

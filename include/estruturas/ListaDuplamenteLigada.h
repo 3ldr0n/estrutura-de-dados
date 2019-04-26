@@ -19,7 +19,6 @@ public:
     void removeInicio();
     void insereFinal(const E& e);
     void removeFinal();
-    void inverte();
     void print() const;
 };
 

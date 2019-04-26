@@ -93,28 +93,15 @@ void ListaDuplamenteLigada<E>::insereFinal(const E &e)
 template <class E>
 void ListaDuplamenteLigada<E>::removeFinal()
 {
-    DNo<E> *aux = cabeca;
-    while (aux->prox->prox != NULL)
-        aux = aux->prox;
-
-    delete aux->prox;
-    aux->prox = NULL;
-}
-
-template <class E>
-void ListaDuplamenteLigada<E>::inverte()
-{
-    DNo<E> *aux = cabeca;
-    ListaDuplamenteLigada<E> invertida;
-    while (aux != NULL) {
-        invertida.insereInicio(aux->elem);
-        aux = aux->prox;
-        removeInicio();
+    if (cabeca == fim) {
+        delete cabeca;
+        cabeca = fim = NULL;
+    } else {
+        DNo<E> *aux = fim;
+        fim = fim->prev;
+        fim->prox = NULL;
+        delete aux;
     }
-
-    cabeca = new DNo<E>();
-    cabeca->elem = invertida.inicio();
-    cabeca->prox = invertida.getCabeca()->prox;
 }
 
 template <class E>
