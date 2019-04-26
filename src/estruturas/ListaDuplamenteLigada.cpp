@@ -57,23 +57,6 @@ void ListaDuplamenteLigada<E>::insereInicio(const E& e)
 }
 
 template <class E>
-void ListaDuplamenteLigada<E>::removeInicio()
-{
-    if (vazia())
-        return;
-
-    if (cabeca == fim) {
-        delete cabeca;
-        cabeca = fim = NULL;
-    } else {
-        DNo<E> *aux = cabeca;
-        cabeca = cabeca->prox;
-        cabeca->prev = NULL;
-        delete aux;
-    }
-}
-
-template <class E>
 void ListaDuplamenteLigada<E>::insereFinal(const E &e)
 {
     DNo<E> *novo = new DNo<E>();
@@ -91,8 +74,28 @@ void ListaDuplamenteLigada<E>::insereFinal(const E &e)
 }
 
 template <class E>
+void ListaDuplamenteLigada<E>::removeInicio()
+{
+    if (vazia())
+        return;
+
+    if (cabeca == fim) {
+        delete cabeca;
+        cabeca = fim = NULL;
+    } else {
+        DNo<E> *aux = cabeca;
+        cabeca = cabeca->prox;
+        cabeca->prev = NULL;
+        delete aux;
+    }
+}
+
+template <class E>
 void ListaDuplamenteLigada<E>::removeFinal()
 {
+    if (vazia())
+        return;
+
     if (cabeca == fim) {
         delete cabeca;
         cabeca = fim = NULL;

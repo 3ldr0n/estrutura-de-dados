@@ -16,8 +16,8 @@ public:
     const E& inicio() const;
     const E& final() const;
     void insereInicio(const E& e);
-    void removeInicio();
     void insereFinal(const E& e);
+    void removeInicio();
     void removeFinal();
     void print() const;
 };
