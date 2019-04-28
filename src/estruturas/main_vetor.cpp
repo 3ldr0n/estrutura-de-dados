@@ -1,6 +1,10 @@
-#include "Vetor.cpp"
+#include "../numeros/Complexo.cpp"
+#include "../numeros/Real.cpp"
+#include "../numeros/Racional.cpp"
+#include "../numeros/Inteiro.cpp"
+#include "../numeros/Natural.cpp"
 
-#include "numeros/Natural.h"
+#include "Vetor.cpp"
 
 int main()
 {
@@ -31,7 +35,12 @@ int main()
     v.agrupamento(x);
     v.print();
 
-    Vetor<Natural> b(6);
+    Vetor<Natural> b(5);
+    b.insere(Natural(1), 0);
+    b.insere(Natural(2), 1);
+    b.insere(Natural(3), 2);
+    b.insere(Natural(4), 3);
+    b.insere(Natural(5), 4);
 
     return 0;
 }
