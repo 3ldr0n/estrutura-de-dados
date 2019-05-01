@@ -24,6 +24,10 @@ lista_duplamente_ligada:
 	mkdir -p bin
 	$(CC) $(CFLAGS) $(EST_DIR)/main_lista_duplamente_ligada.cpp -o bin/listaDuplamenteLigada
 
+polinomio:
+	mkdir -p bin
+	$(CC) $(CFLAGS) $(EST_DIR)/Polinomio.cpp $(EST_DIR)/main_polinomio.cpp -o bin/polinomio
+
 .PHONY: clean
 
 clean:
