@@ -40,7 +40,7 @@ const E& ListaDuplamenteLigada<E>::final() const
 }
 
 template <class E>
-void ListaDuplamenteLigada<E>::insereInicio(const E& e)
+void ListaDuplamenteLigada<E>::insereInicio(const E &e)
 {
     DNo<E> *novo = new DNo<E>();
     novo->elem = e;
@@ -68,7 +68,7 @@ void ListaDuplamenteLigada<E>::insereFinal(const E &e)
         cabeca = fim = novo;
     } else {
         novo->prev = fim;
-        fim->prev = novo;
+        fim->prox = novo;
         fim = novo;
     }
 }
@@ -120,4 +120,15 @@ void ListaDuplamenteLigada<E>::print() const
     }
 
     std::cout << std::endl;
+}
+
+template <class E>
+void ListaDuplamenteLigada<E>::troca()
+{
+    if (vazia() || cabeca == fim)
+        return;
+
+    E aux = cabeca->elem;
+    cabeca->elem = fim->elem;
+    fim->elem = aux;
 }
