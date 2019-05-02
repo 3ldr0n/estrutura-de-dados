@@ -74,6 +74,27 @@ void ListaDuplamenteLigada<E>::insereFinal(const E &e)
 }
 
 template <class E>
+void ListaDuplamenteLigada<E>::insereNoDepois(DNo<E> *n)
+{
+    if (vazia())
+        return;
+
+    if (cabeca == fim && cabeca != n)
+        return;
+
+    DNo<E> *aux = cabeca;
+    while (aux != NULL) {
+        if (aux == n) {
+            n->prox = aux->prox;
+            n->prev = aux;
+            aux->prox = n;
+            break;
+        }
+        aux = aux->prox;
+    }
+}
+
+template <class E>
 void ListaDuplamenteLigada<E>::removeInicio()
 {
     if (vazia())

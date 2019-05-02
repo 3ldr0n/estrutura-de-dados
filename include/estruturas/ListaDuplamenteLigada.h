@@ -17,8 +17,8 @@ public:
     const E &final() const;
     void insereInicio(const E &e);
     void insereFinal(const E &e);
-    void insereNoDepois(const DNo<E> *n);
-    void insereNoAntes(const DNo<E> *n);
+    void insereNoDepois(DNo<E> *n);
+    void insereNoAntes(DNo<E> *n);
     void removeInicio();
     void removeFinal();
     void removeNo(const DNo<E> *n);

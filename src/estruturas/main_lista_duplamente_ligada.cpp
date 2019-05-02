@@ -20,5 +20,10 @@ int main()
 
     lista.print();
 
+    DNo<int> *e = lista.getCabeca();
+    lista.insereNoDepois(e);
+
+    lista.print();
+
     return 0;
 }
