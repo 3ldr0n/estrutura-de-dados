@@ -12,6 +12,7 @@ public:
     ListaDuplamenteLigada();
     ~ListaDuplamenteLigada();
     DNo<E> *getCabeca() const;
+    DNo<E> *getFim() const;
     bool vazia() const;
     const E &inicio() const;
     const E &final() const;

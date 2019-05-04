@@ -22,6 +22,12 @@ DNo<E> *ListaDuplamenteLigada<E>::getCabeca() const
 }
 
 template <class E>
+DNo<E> *ListaDuplamenteLigada<E>::getFim() const
+{
+    return fim;
+}
+
+template <class E>
 bool ListaDuplamenteLigada<E>::vazia() const
 {
     return cabeca == NULL;
@@ -95,6 +101,27 @@ void ListaDuplamenteLigada<E>::insereNoDepois(DNo<E> *n)
 }
 
 template <class E>
+void ListaDuplamenteLigada<E>::insereNoAntes(DNo<E> *n)
+{
+    if (vazia())
+        return;
+
+    if (cabeca == fim && cabeca != n)
+        return;
+
+    DNo<E> *aux = cabeca;
+    while (aux != NULL) {
+        if (aux == n) {
+            n->prev = aux->prev;
+            n->prox = aux;
+            aux->prev = n;
+            break;
+        }
+        aux = aux->prox;
+    }
+}
+
+template <class E>
 void ListaDuplamenteLigada<E>::removeInicio()
 {
     if (vazia())
@@ -127,6 +154,41 @@ void ListaDuplamenteLigada<E>::removeFinal()
         delete aux;
     }
 }
+
+template <class E>
+void ListaDuplamenteLigada<E>::removeNo(const DNo<E> *n)
+{
+    if (vazia()) return;
+
+    DNo<E>* aux;
+
+    if (cabeca == n) {
+        aux = cabeca;
+        cabeca = aux->prox;
+        cabeca->prev = NULL;
+        delete aux;
+        return;
+    }
+
+    if (fim == n) {
+        aux = fim;
+        fim = aux->prev;
+        fim->prox = NULL;
+        delete aux;
+        return;
+    }
+
+    aux = cabeca;
+    while (aux != NULL) {
+        if (aux == n) {
+            aux->prev->prox = aux->prox;
+            aux->prox->prev = aux->prev;
+            delete aux;
+        }
+        aux = aux->prox;
+    }
+}
+
 
 template <class E>
 void ListaDuplamenteLigada<E>::print() const
