@@ -109,6 +109,12 @@ void ListaDuplamenteLigada<E>::insereNoAntes(DNo<E> *n)
     if (cabeca == fim && cabeca != n)
         return;
 
+    if (cabeca == n) {
+        insereInicio(n->elem);
+    } else if (fim == n) {
+        insereFinal(n->elem);
+    }
+
     DNo<E> *aux = cabeca;
     while (aux != NULL) {
         if (aux == n) {
@@ -163,18 +169,12 @@ void ListaDuplamenteLigada<E>::removeNo(const DNo<E> *n)
     DNo<E>* aux;
 
     if (cabeca == n) {
-        aux = cabeca;
-        cabeca = aux->prox;
-        cabeca->prev = NULL;
-        delete aux;
+        removeInicio();
         return;
     }
 
     if (fim == n) {
-        aux = fim;
-        fim = aux->prev;
-        fim->prox = NULL;
-        delete aux;
+        removeFinal();
         return;
     }
 
