@@ -88,6 +88,11 @@ void ListaDuplamenteLigada<E>::insereNoDepois(DNo<E> *n)
     if (cabeca == fim && cabeca != n)
         return;
 
+    if (fim == n) {
+        insereFinal(n->elem);
+        return;
+    }
+
     DNo<E> *aux = cabeca;
     while (aux != NULL) {
         if (aux == n) {
@@ -111,8 +116,7 @@ void ListaDuplamenteLigada<E>::insereNoAntes(DNo<E> *n)
 
     if (cabeca == n) {
         insereInicio(n->elem);
-    } else if (fim == n) {
-        insereFinal(n->elem);
+        return;
     }
 
     DNo<E> *aux = cabeca;

@@ -22,11 +22,14 @@ int main()
     lista.print();
 
     DNo<int> *e = lista.getCabeca();
-    //lista.insereNoDepois(e);
-    //lista.insereNoAntes(e);
-    lista.removeNo(e);
+    lista.insereNoAntes(e);
 
     e = lista.getFim();
+
+    lista.insereNoDepois(e);
+
+    lista.removeNo(e);
+
     lista.removeNo(e);
 
     lista.print();
