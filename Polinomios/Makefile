@@ -1,2 +1,3 @@
 all:
-	clang++-7 -pthread -o main ListaDuplamenteLigada.cpp Monomio.cpp Polinomio.cpp main.cpp
+	mkdir -p bin
+	clang++-7 -pthread -o bin/main ListaDuplamenteLigada.cpp Monomio.cpp Polinomio.cpp main.cpp
