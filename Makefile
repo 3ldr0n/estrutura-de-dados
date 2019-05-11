@@ -1,5 +1,5 @@
-CC=clang
-CFLAGS+=-Wall -Wextra -Werror -lstdc++ -I./include
+CC=clang++-7
+CFLAGS+=-Wall -Wextra -Werror -I./include
 BIN_DIR=bin
 SRC_DIR=src
 NUM_DIR=$(SRC_DIR)/numeros
