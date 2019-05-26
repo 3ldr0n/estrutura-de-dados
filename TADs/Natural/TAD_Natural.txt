@@ -1,8 +1,0 @@
-SPEC NATURAL
-	 SORTS NATURAL
-	 OPERATIONS: create:				-> NATURAL
-	 			 suc: NATURAL 			-> NATURAL
-				 soma: NATURAL NATURAL 	-> NATURAL
-				 mult: NATURAL NATURAL 	-> NATURAL
-	AXIOMS: 	 soma(suc(X),Y) = suc(soma(X,Y))
-END SPEC
