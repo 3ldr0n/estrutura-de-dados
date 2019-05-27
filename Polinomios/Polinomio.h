@@ -1,7 +1,7 @@
 #ifndef POLINOMIO_H
 #define POLINOMIO_H
 
-#include "ListaDuplamenteLigada.cpp"
+#include "../ListaDuplamenteLigada/ListaDuplamenteLigada.cpp"
 #include "Monomio.h"
 
 class Polinomio : public ListaDuplamenteLigada<Monomio> {

@@ -1,7 +1,7 @@
 #ifndef PILHA_H
 #define PILHA_H
 
-#include "ListaLigada.cpp"
+#include "../ListaLigada/ListaLigada.cpp"
 
 template <class E>
 class Pilha {

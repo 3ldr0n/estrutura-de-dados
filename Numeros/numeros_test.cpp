@@ -1,4 +1,4 @@
-#include "numeros/Natural.h"
+#include "Natural.h"
 
 int main()
 {

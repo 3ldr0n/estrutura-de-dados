@@ -1,9 +1,10 @@
 CC=clang++-7
 CFLAGS+=-Wall -Wextra -Werror -I./include
+NUMEROS_SRC:=$(wildcard *.cpp)
 
 all:
 	mkdir -p bin
-	$(CC) $(CFLAGS) Monomio.cpp Polinomio.cpp Polinomio_test.cpp -o bin/Polinomio_test
+	$(CC) $(CFLAGS) $(NUMEROS_SRC) -o bin/numeros_test
 
 .PHONY: clean
 

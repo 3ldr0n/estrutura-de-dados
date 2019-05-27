@@ -1,12 +1,12 @@
 #ifndef PILHA_H
 #define PILHA_H
 
-#include "../ListaDuplamenteLigada/ListaDuplamenteLigada.cpp"
+#include "../Vetor/Vetor.cpp"
 
 template <class E>
 class Pilha {
 private:
-    ListaDuplamenteLigada<E> *p;
+    Vetor<E> *p;
 public:
     Pilha();
     ~Pilha();

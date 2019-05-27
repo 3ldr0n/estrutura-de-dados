@@ -1,4 +1,4 @@
-#include "numeros/Inteiro.h"
+#include "Inteiro.h"
 
 Inteiro::Inteiro():Racional(){}
 

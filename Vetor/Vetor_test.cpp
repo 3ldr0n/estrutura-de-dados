@@ -1,8 +1,8 @@
-#include "../numeros/Complexo.cpp"
-#include "../numeros/Real.cpp"
-#include "../numeros/Racional.cpp"
-#include "../numeros/Inteiro.cpp"
-#include "../numeros/Natural.cpp"
+#include "../Numeros/Complexo.cpp"
+#include "../Numeros/Real.cpp"
+#include "../Numeros/Racional.cpp"
+#include "../Numeros/Inteiro.cpp"
+#include "../Numeros/Natural.cpp"
 
 #include "Vetor.cpp"
 

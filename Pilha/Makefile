@@ -1,11 +1,19 @@
+CC=clang++-7
+CFLAGS+=-Wall -Wextra -Werror -I./include
+
 all:
 	mkdir -p bin
-	clang++-7 -pthread -o bin/main main.cpp
+	$(CC) $(CFLAGS) Pilha_test.cpp -o bin/Pilha_test
 
 simples:
 	mkdir -p bin
-	clang++-7 -pthread -o bin/simples main_simples.cpp
+	$(CC) $(CFLAGS) PilhaSimples_test.cpp -o bin/PilhaSimples_test
 
 vetor:
 	mkdir -p bin
-	clang++-7 -pthread -o bin/vetor main_vetor.cpp
+	$(CC) $(CFLAGS) PilhaVetor_test.cpp -o bin/PilhaVetor_test
+
+.PHONY: clean
+
+clean:
+	rm $(BIN_DIR)/*

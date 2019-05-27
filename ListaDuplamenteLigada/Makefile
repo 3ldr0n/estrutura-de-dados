@@ -1,9 +1,9 @@
 CC=clang++-7
 CFLAGS+=-Wall -Wextra -Werror -I./include
 
-all:
+lista_duplamente_ligada:
 	mkdir -p bin
-	$(CC) $(CFLAGS) Monomio.cpp Polinomio.cpp Polinomio_test.cpp -o bin/Polinomio_test
+	$(CC) $(CFLAGS) ListaDuplamenteLigada_test.cpp -o bin/ListaDuplamenteLigada_test
 
 .PHONY: clean
 

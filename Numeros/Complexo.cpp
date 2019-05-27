@@ -1,4 +1,4 @@
-#include "numeros/Complexo.h"
+#include "Complexo.h"
 
 Complexo::Complexo(){}
 

@@ -1,4 +1,4 @@
-#include "numeros/Racional.h"
+#include "Racional.h"
 
 Racional::Racional():Real(){}
 

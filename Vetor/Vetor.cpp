@@ -1,4 +1,4 @@
-#include "estruturas/Vetor.h"
+#include "Vetor.h"
 
 template <class T>
 Vetor<T>::Vetor(int t)
