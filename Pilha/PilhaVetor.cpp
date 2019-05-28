@@ -1,9 +1,9 @@
 #include "PilhaVetor.h"
 
 template <class E>
-Pilha<E>::Pilha()
+Pilha<E>::Pilha(int t)
 {
-    p = new Vetor<E>();
+    p = new Vetor<E>(t);
 }
 
 template <class E>

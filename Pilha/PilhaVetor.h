@@ -8,7 +8,7 @@ class Pilha {
 private:
     Vetor<E> *p;
 public:
-    Pilha();
+    Pilha(int t);
     ~Pilha();
     bool vazia();
     void empilha(const E &e);
