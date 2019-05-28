@@ -1,7 +1,7 @@
 #ifndef SOLVER_H
 #define SOLVER_H
 
-#include "Pilha.cpp"
+#include "../Pilha/Pilha.cpp"
 
 template <class E>
 class Solver {

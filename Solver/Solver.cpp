@@ -3,7 +3,7 @@
 template <class E>
 Solver<E>::Solver()
 {
-    
+    p = Pilha<void *>();
 }
 
 template <class E>
