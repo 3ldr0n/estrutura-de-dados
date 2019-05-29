@@ -3,13 +3,16 @@
 
 #include "../Pilha/Pilha.cpp"
 
-template <class E>
+#include <sstream>
+
 class Solver {
 private:
-    Pilha<E> p;
+    Pilha<std::string> p;
 public:
     Solver();
     ~Solver();
+    void parse_expression(std::string expr);
+    void valida_pilha();
     double solve(std::string expr);
 };
 
