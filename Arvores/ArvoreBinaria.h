@@ -14,7 +14,7 @@ public:
     ~ArvoreBinaria();
     No *getRaiz() const;
     void insere(int chave);
-    void print() const;
+    void printEmOrdem(No *no) const;
     int contaNos() const;
     int media() const;
 };

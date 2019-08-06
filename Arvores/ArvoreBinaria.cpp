@@ -51,12 +51,11 @@ void ArvoreBinaria::insere(int chave)
         insereNo(raiz, chave);
 }
 
-void ArvoreBinaria::print() const
+void ArvoreBinaria::printEmOrdem(No* no) const
 {
-    No *aux;
-    for (aux = raiz;aux != NULL;aux = aux->getEsquerda())
-        std::cout << aux->getChave() << std::endl;
-
-    for (aux = raiz->getDireita();aux != NULL;aux = aux->getDireita())
-        std::cout << aux->getChave() << std::endl;
+    if (no != NULL) {
+        printEmOrdem(no->getEsquerda());
+        std::cout << no->getChave() << std::endl;
+        printEmOrdem(no->getDireita());
+    }
 }
