@@ -7,5 +7,7 @@ int main()
     arvore.insere(11);
     arvore.insere(5);
 
+    arvore.print();
+
     return 0;
 }

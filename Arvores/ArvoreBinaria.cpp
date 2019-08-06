@@ -53,5 +53,10 @@ void ArvoreBinaria::insere(int chave)
 
 void ArvoreBinaria::print() const
 {
-    
+    No *aux;
+    for (aux = raiz;aux != NULL;aux = aux->getEsquerda())
+        std::cout << aux->getChave() << std::endl;
+
+    for (aux = raiz->getDireita();aux != NULL;aux = aux->getDireita())
+        std::cout << aux->getChave() << std::endl;
 }
