@@ -9,10 +9,10 @@ private:
 public:
 	ArvoreBinariaBusca();
 	bool vazia();
-    std::string incluirNo(int vl);
+    void incluirNo(int vl);
     std::string localizarNo(int vl);
 	No *excluirNo(int vl);
-    std::string imprimirEmOrdem();
+    void imprimirEmOrdem();
 };
 
 #endif
