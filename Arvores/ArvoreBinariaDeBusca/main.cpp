@@ -1,22 +1,25 @@
-#include <iostream>
-#include <stdlib.h>
-
 #include "ArvoreBinariaBusca.h"
+
+void menu()
+{
+    std::cout << "\nARVORE BINARIA DE BUSCA" << std::endl;
+    std::cout << "0 - sair" << std::endl;
+    std::cout << "1 - incluir um no'" << std::endl;
+    std::cout << "2 - localizar un no'" << std::endl;
+    std::cout << "3 - excluir um no'" << std::endl;
+    std::cout << "4 - imprimir a arvore em Pre' Ordem" << std::endl;
+    std::cout << "5 - imprimir a arvore Em Ordem" << std::endl;
+    std::cout << "6 - imprimir a arvore em Pos Ordem" << std::endl;
+    std::cout << "\nSua opcao -> ";
+}
 
 int main()
 {
 	ArvoreBinariaBusca arvore;
 
 	while (true) {
-        std::cout << "\nARVORE BINARIA DE BUSCA" << std::endl;
-        std::cout << "0 - sair" << std::endl;
-        std::cout << "1 - incluir um no'" << std::endl;
-        std::cout << "2 - localizar un no'" << std::endl;
-        std::cout << "3 - excluir um no'" << std::endl;
-        std::cout << "4 - imprimir a arvore em Pre' Ordem" << std::endl;
-        std::cout << "5 - imprimir a arvore Em Ordem" << std::endl;
-        std::cout << "6 - imprimir a arvore em Pos Ordem" << std::endl;
-        std::cout << "\nSua opcao -> ";
+        menu();
+
 		int opc;
         std::cin >> opc;
 
@@ -50,4 +53,3 @@ int main()
 
 	return 0;
 }
-
