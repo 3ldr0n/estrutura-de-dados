@@ -99,7 +99,8 @@ std::string ArvoreBinariaBusca::localizarNo(int vl)
 
 No *ArvoreBinariaBusca::excluirNo(int vl)
 {
-
+    std::cout << vl << std::endl;
+    return new No(vl);
 }
 
 void ArvoreBinariaBusca::imprimirEmOrdem()
