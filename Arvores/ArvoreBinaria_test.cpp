@@ -20,5 +20,7 @@ int main()
 
     std::cout << arvore.contaNos(arvore.getRaiz()) << std::endl;
 
+    std::cout << arvore.media(arvore.getRaiz()) << std::endl;
+
     return 0;
 }

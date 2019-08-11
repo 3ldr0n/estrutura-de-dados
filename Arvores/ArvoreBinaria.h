@@ -9,6 +9,7 @@ private:
     void insereNo(No *no, int chave);
     void insereEsquerda(No *no, int chave);
     void insereDireita(No *no, int chave);
+    int valorTotal(No *no) const;
 public:
     ArvoreBinaria();
     ~ArvoreBinaria();
@@ -19,7 +20,7 @@ public:
     void printPreOrdem(No *no) const;
     void printPosOrdem(No *no) const;
     int contaNos(No *no) const;
-    int media() const;
+    int media(No *no) const;
 };
 
 #endif

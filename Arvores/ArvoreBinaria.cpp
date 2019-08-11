@@ -88,3 +88,21 @@ int ArvoreBinaria::contaNos(No *no) const
     }
     return numeroDeNos;
 }
+
+int ArvoreBinaria::valorTotal(No *no) const
+{
+    int valorTotalArvore = 0;
+    if (no != NULL) {
+        valorTotalArvore += no->getChave();
+        valorTotalArvore += valorTotal(no->getEsquerda());
+        valorTotalArvore += valorTotal(no->getDireita());
+    }
+
+    return valorTotalArvore;
+}
+
+int ArvoreBinaria::media(No *no) const
+{
+    int valorTotalDosNos = valorTotal(no);
+    return valorTotalDosNos / contaNos(no);
+}
