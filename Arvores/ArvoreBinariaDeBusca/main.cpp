@@ -4,10 +4,10 @@ void menu()
 {
     std::cout << "\nARVORE BINARIA DE BUSCA" << std::endl;
     std::cout << "0 - sair" << std::endl;
-    std::cout << "1 - incluir um no'" << std::endl;
-    std::cout << "2 - localizar un no'" << std::endl;
-    std::cout << "3 - excluir um no'" << std::endl;
-    std::cout << "4 - imprimir a arvore em Pre' Ordem" << std::endl;
+    std::cout << "1 - incluir um nó" << std::endl;
+    std::cout << "2 - localizar un nó" << std::endl;
+    std::cout << "3 - excluir um nó" << std::endl;
+    std::cout << "4 - imprimir a arvore em Pré Ordem" << std::endl;
     std::cout << "5 - imprimir a arvore Em Ordem" << std::endl;
     std::cout << "6 - imprimir a arvore em Pos Ordem" << std::endl;
     std::cout << "\nSua opcao -> ";
@@ -22,34 +22,38 @@ int main()
 
 		int opc;
         std::cin >> opc;
-
-		if (opc == 0) {
-			break;
-		} else if (opc == 1) {
-			int opc1;
-            std::cout << "\n Informe o valor do no' a ser incluido: ";
-            std::cin >> opc1;
-            arvore.incluirNo(opc1);
-		} else if (opc == 2) {
-			int opc2;
-            std::cout << "\n Informe o valor do no' a ser localizado: ";
-            std::cin >> opc2;
-            std::cout << "\n\n" << arvore.localizarNo(opc2) << "\n\n";
-		} else if (opc == 3) {
-			//*** SUA IMPLEMENTACAO
-		} else if (opc == 4) {
+        switch(opc) {
+        case 0:
+            return 0;
+        case 1:
+        {
+            int valor_a_ser_incluido;
+            std::cout << "\n Informe o valor do nó a ser incluido: ";
+            std::cin >> valor_a_ser_incluido;
+            arvore.incluirNo(valor_a_ser_incluido);
+            break;
+        }
+        case 2:
+        {
+			int valor_a_ser_localizado;
+            std::cout << "\n Informe o valor do nó a ser localizado: ";
+            std::cin >> valor_a_ser_localizado;
+            No *no = arvore.localizarNo(valor_a_ser_localizado);
+            std::cout << "\n\n" << no->getValor() << "\n\n";
+            break;
+        }
+        case 3:
+            break;
+        case 4:
             arvore.imprimirEmOrdem();
-		} else if (opc == 4) {
-			//*** SUA IMPLEMENTACAO
-		} else if (opc == 5) {
-			//*** SUA IMPLEMENTACAO
-		} else if (opc == 6) {
-			//*** SUA IMPLEMENTACAO
-		}
-
+            break;
+        default:
+            std::cout << "Opção inválida" << std::endl;
+            break;
+        }
 	}
 
-    std::cout << "\n\nObrigado e ate' breve.\n\n";
+    std::cout << "\n\nObrigado e até breve.\n\n";
 
 	return 0;
 }

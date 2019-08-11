@@ -31,9 +31,9 @@ void ArvoreBinariaBusca::incluirNo(int vl)
 		//= nao pode haver valor repetido.
 		if (vlAux == vl)
 			return;
-		//= o valor e' menor que o do no' corrente -> verificar 'a esquerda
+		//= o valor é menor que o do nó corrente -> verificar à esquerda
 		if (vl < vlAux) {
-			//= se o filho esquerdo for nulo -> insere o novo no' como filho esquerdo.
+			//= se o filho esquerdo for nulo -> insere o novo nó como filho esquerdo.
 			//= caso contrario -> move cursor para filho esquerdo
 			if (cursor->getEsquerda() == NULL) {
 				cursor->setEsquerda(no);
@@ -42,9 +42,9 @@ void ArvoreBinariaBusca::incluirNo(int vl)
 				cursor = cursor->getEsquerda();
 			}
 		}
-		//= o valor e' maior que o do no' corrente -> verificar 'a direita
+		//= o valor é maior que o do nó corrente -> verificar à direita
 		else if (vl > vlAux) {
-			//= se o filho direito for nulo -> insere o novo no' como filho direito.
+			//= se o filho direito for nulo -> insere o novo nó como filho direito.
 			//= caso contrario -> move cursor para filho esquerdo
 			if (cursor->getDireita() == NULL) {
 				cursor->setDireita(no);
@@ -56,44 +56,36 @@ void ArvoreBinariaBusca::incluirNo(int vl)
 	}
 }
 
-std::string ArvoreBinariaBusca::localizarNo(int vl)
+No *ArvoreBinariaBusca::localizarNo(int vl)
 {
-
-    std::stringstream ret;
-	ret << "inicio";
-
 	if (this->vazia()) {
-		ret << "A arvore esta' vazia.";
-	} else {
-		No *cursor = this->raiz;
+        std::cout << "A arvore está vazia." << std::endl;
+        return NULL;
+	}
+	No *cursor = this->raiz;
 
-		int vlAux;
+	int vlAux;
 
-		while (true) {
-			vlAux = cursor->getValor();
-			if (vl == vlAux) {
-				break;
-			} else if (vl < vlAux) {
-				if (cursor->getEsquerda() == NULL) {
-					ret << "\n*** NAO LOCALIZADO ***";
-					break;
-				} else {
-					ret << "\n--- " << vlAux << " esq";
-					cursor = cursor->getEsquerda();
-				}
-			} else if (vl > vlAux) {
-				if (cursor->getDireita() == NULL) {
-					ret << "\n*** NAO LOCALIZADO ***";
-					break;
-				} else {
-					ret << "\n--- " << vlAux << " dir";
-					cursor = cursor->getDireita();
-				}
+	while (true) {
+		vlAux = cursor->getValor();
+		if (vl == vlAux) {
+			break;
+		} else if (vl < vlAux) {
+			if (cursor->getEsquerda() == NULL) {
+                return NULL;
+			} else {
+				cursor = cursor->getEsquerda();
+			}
+		} else if (vl > vlAux) {
+			if (cursor->getDireita() == NULL) {
+				return NULL;
+			} else {
+				cursor = cursor->getDireita();
 			}
 		}
 	}
 
-	return ret.str();
+    return cursor;
 }
 
 
