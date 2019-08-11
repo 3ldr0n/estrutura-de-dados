@@ -18,5 +18,7 @@ int main()
     arvore.printPosOrdem(arvore.getRaiz());
     std::cout << std::endl;
 
+    std::cout << arvore.contaNos(arvore.getRaiz()) << std::endl;
+
     return 0;
 }

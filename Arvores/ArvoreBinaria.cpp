@@ -77,3 +77,14 @@ void ArvoreBinaria::printPosOrdem(No *no) const
         std::cout << no->getChave() << " ";
     }
 }
+
+int ArvoreBinaria::contaNos(No *no) const
+{
+    int numeroDeNos = 0;
+    if (no != NULL) {
+        numeroDeNos += 1;
+        numeroDeNos += contaNos(no->getEsquerda());
+        numeroDeNos += contaNos(no->getDireita());
+    }
+    return numeroDeNos;
+}

@@ -14,10 +14,11 @@ public:
     ~ArvoreBinaria();
     No *getRaiz() const;
     void insere(int chave);
+    void remove(int chave);
     void printEmOrdem(No *no) const;
     void printPreOrdem(No *no) const;
     void printPosOrdem(No *no) const;
-    int contaNos() const;
+    int contaNos(No *no) const;
     int media() const;
 };
 
