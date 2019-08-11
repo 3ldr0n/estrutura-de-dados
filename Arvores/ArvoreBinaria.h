@@ -16,6 +16,7 @@ public:
     void insere(int chave);
     void printEmOrdem(No *no) const;
     void printPreOrdem(No *no) const;
+    void printPosOrdem(No *no) const;
     int contaNos() const;
     int media() const;
 };

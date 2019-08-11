@@ -12,7 +12,11 @@ int main()
     arvore.insere(19);
 
     arvore.printEmOrdem(arvore.getRaiz());
+    std::cout << std::endl;
     arvore.printPreOrdem(arvore.getRaiz());
+    std::cout << std::endl;
+    arvore.printPosOrdem(arvore.getRaiz());
+    std::cout << std::endl;
 
     return 0;
 }

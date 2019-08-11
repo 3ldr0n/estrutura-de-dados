@@ -55,7 +55,7 @@ void ArvoreBinaria::printEmOrdem(No* no) const
 {
     if (no != NULL) {
         printEmOrdem(no->getEsquerda());
-        std::cout << no->getChave() << std::endl;
+        std::cout << no->getChave() << " ";
         printEmOrdem(no->getDireita());
     }
 }
@@ -63,8 +63,17 @@ void ArvoreBinaria::printEmOrdem(No* no) const
 void ArvoreBinaria::printPreOrdem(No *no) const
 {
     if (no != NULL) {
-        std::cout << no->getChave() << std::endl;
+        std::cout << no->getChave() << " ";
         printPreOrdem(no->getEsquerda());
         printPreOrdem(no->getDireita());
+    }
+}
+
+void ArvoreBinaria::printPosOrdem(No *no) const
+{
+    if (no != NULL) {
+        printPosOrdem(no->getEsquerda());
+        printPosOrdem(no->getDireita());
+        std::cout << no->getChave() << " ";
     }
 }
