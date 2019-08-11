@@ -3,14 +3,16 @@
 int main()
 {
     ArvoreBinaria arvore;
-    arvore.insere(10);
-    arvore.insere(11);
+    arvore.insere(7);
     arvore.insere(5);
-    arvore.insere(6);
-    arvore.insere(15);
-    arvore.insere(14);
+    arvore.insere(10);
+    arvore.insere(3);
+    arvore.insere(4);
+    arvore.insere(8);
+    arvore.insere(19);
 
     arvore.printEmOrdem(arvore.getRaiz());
+    arvore.printPreOrdem(arvore.getRaiz());
 
     return 0;
 }

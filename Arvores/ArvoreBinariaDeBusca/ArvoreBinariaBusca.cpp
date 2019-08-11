@@ -13,39 +13,32 @@ bool ArvoreBinariaBusca::vazia()
 	return raiz == NULL;
 }
 
-void ArvoreBinariaBusca::incluirNo(int vl)
+void ArvoreBinariaBusca::incluirNo(int valor)
 {
-	No *no = new No(vl);
-	No *cursor = this->raiz;
+	No *no = new No(valor);
 
-	//= se raiz for nulo -> insere no raiz.
-	if (cursor == NULL) {
+	if (vazia()) {
 		raiz = no;
 		return;
 	}
 
-	int vlAux;
-	while (true) {
-        vlAux = cursor->getValor();
+	No *cursor = raiz;
 
-		//= nao pode haver valor repetido.
-		if (vlAux == vl)
-			return;
-		//= o valor é menor que o do nó corrente -> verificar à esquerda
-		if (vl < vlAux) {
-			//= se o filho esquerdo for nulo -> insere o novo nó como filho esquerdo.
-			//= caso contrario -> move cursor para filho esquerdo
+	int valorAux;
+	while (cursor != NULL) {
+        valorAux = cursor->getValor();
+
+		if (valor == valorAux)
+			break;
+
+		if (valor < valorAux) {
 			if (cursor->getEsquerda() == NULL) {
 				cursor->setEsquerda(no);
 				break;
 			} else {
 				cursor = cursor->getEsquerda();
 			}
-		}
-		//= o valor é maior que o do nó corrente -> verificar à direita
-		else if (vl > vlAux) {
-			//= se o filho direito for nulo -> insere o novo nó como filho direito.
-			//= caso contrario -> move cursor para filho esquerdo
+		} else if (valor > valorAux) {
 			if (cursor->getDireita() == NULL) {
 				cursor->setDireita(no);
 				break;
@@ -56,27 +49,26 @@ void ArvoreBinariaBusca::incluirNo(int vl)
 	}
 }
 
-No *ArvoreBinariaBusca::localizarNo(int vl)
+No *ArvoreBinariaBusca::localizarNo(int valor)
 {
-	if (this->vazia()) {
+	if (vazia()) {
         std::cout << "A arvore está vazia." << std::endl;
         return NULL;
 	}
-	No *cursor = this->raiz;
 
-	int vlAux;
-
-	while (true) {
-		vlAux = cursor->getValor();
-		if (vl == vlAux) {
+	No *cursor = raiz;
+	int valorAux;
+	while (cursor != NULL) {
+		valorAux = cursor->getValor();
+		if (valor == valorAux) {
 			break;
-		} else if (vl < vlAux) {
+		} else if (valor < valorAux) {
 			if (cursor->getEsquerda() == NULL) {
                 return NULL;
 			} else {
 				cursor = cursor->getEsquerda();
 			}
-		} else if (vl > vlAux) {
+		} else if (valor > valorAux) {
 			if (cursor->getDireita() == NULL) {
 				return NULL;
 			} else {
@@ -89,10 +81,10 @@ No *ArvoreBinariaBusca::localizarNo(int vl)
 }
 
 
-No *ArvoreBinariaBusca::excluirNo(int vl)
+No *ArvoreBinariaBusca::excluirNo(int valor)
 {
-    std::cout << vl << std::endl;
-    return new No(vl);
+    std::cout << valor << std::endl;
+    return new No(valor);
 }
 
 void ArvoreBinariaBusca::imprimirEmOrdem()
@@ -103,7 +95,7 @@ void ArvoreBinariaBusca::imprimirEmOrdem()
 	}
 
 	Pilha pilha;
-	pilha.push(this->raiz);
+	pilha.push(raiz);
 	while (!pilha.vazia()){
 		NoPilha *no2 = pilha.pop();
 		No *noAbb = no2->getNo();

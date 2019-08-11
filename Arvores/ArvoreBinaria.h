@@ -15,6 +15,7 @@ public:
     No *getRaiz() const;
     void insere(int chave);
     void printEmOrdem(No *no) const;
+    void printPreOrdem(No *no) const;
     int contaNos() const;
     int media() const;
 };
