@@ -51,6 +51,25 @@ void ArvoreBinaria::insere(int chave)
         insereNo(raiz, chave);
 }
 
+No *ArvoreBinaria::encontrar(No *no, int chave) const
+{
+    if (no->getChave() == chave) {
+        return no;
+    } else if (no->getChave() > chave) {
+        return encontrar(no->getEsquerda(), chave);
+    } else {
+        return encontrar(no->getDireita(), chave);
+    }
+}
+
+No *ArvoreBinaria::encontrar(int chave) const
+{
+    if (raiz == NULL)
+        return NULL;
+    else
+        return encontrar(raiz, chave);
+}
+
 void ArvoreBinaria::printEmOrdem(No* no) const
 {
     if (no != NULL) {

@@ -12,12 +12,14 @@ private:
     void insereEsquerda(No *no, int chave);
     void insereDireita(No *no, int chave);
     int valorTotal(No *no) const;
+    No *encontrar(No *no, int chave) const;
 public:
     ArvoreBinaria();
     ~ArvoreBinaria();
     No *getRaiz() const;
     void insere(int chave);
     void remove(int chave);
+    No *encontrar(int chave) const;
     void printEmOrdem(No *no) const;
     void printPreOrdem(No *no) const;
     void printPosOrdem(No *no) const;

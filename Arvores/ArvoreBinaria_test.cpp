@@ -27,5 +27,7 @@ int main()
         std::cout << no->getChave() << " ";
     std::cout << std::endl;
 
+    std::cout << arvore.encontrar(4)->getChave() << std::endl;
+
     return 0;
 }
