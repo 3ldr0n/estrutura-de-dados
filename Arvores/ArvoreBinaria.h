@@ -3,6 +3,8 @@
 
 #include "No.h"
 
+#include <list>
+
 class ArvoreBinaria {
 private:
     No *raiz;
@@ -21,6 +23,7 @@ public:
     void printPosOrdem(No *no) const;
     int contaNos(No *no) const;
     int media(No *no) const;
+    std::list<No*> nosMaioresQueMedia(No *no) const;
 };
 
 #endif

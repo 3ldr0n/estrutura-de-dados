@@ -22,5 +22,10 @@ int main()
 
     std::cout << arvore.media(arvore.getRaiz()) << std::endl;
 
+    std::list<No *> nosMaiores = arvore.nosMaioresQueMedia(arvore.getRaiz());
+    for (auto no : nosMaiores)
+        std::cout << no->getChave() << " ";
+    std::cout << std::endl;
+
     return 0;
 }

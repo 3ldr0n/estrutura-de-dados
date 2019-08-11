@@ -106,3 +106,21 @@ int ArvoreBinaria::media(No *no) const
     int valorTotalDosNos = valorTotal(no);
     return valorTotalDosNos / contaNos(no);
 }
+
+std::list<No *> ArvoreBinaria::nosMaioresQueMedia(No *no) const
+{
+    std::list<No *> nos;
+    std::list<No *> nosDireita;
+    std::list<No *> nosEsquerda;
+    int media = this->media(raiz);
+    if (no != NULL) {
+        if (no->getChave() > media) {
+            nos.push_back(no);
+        }
+        nosEsquerda = nosMaioresQueMedia(no->getEsquerda());
+        nosDireita = nosMaioresQueMedia(no->getDireita());
+    }
+    nos.merge(nosEsquerda);
+    nos.merge(nosDireita);
+    return nos;
+}
