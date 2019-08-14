@@ -15,6 +15,11 @@ No *ArvoreBinaria::getRaiz() const
     return raiz;
 }
 
+bool ArvoreBinaria::vazia() const
+{
+    return raiz == NULL;
+}
+
 void ArvoreBinaria::insereNo(No *no, int chave)
 {
     if (chave > no->getChave())
@@ -45,7 +50,7 @@ void ArvoreBinaria::insereEsquerda(No *no, int chave)
 
 void ArvoreBinaria::insere(int chave)
 {
-    if (raiz == NULL)
+    if (vazia())
         raiz = new No(chave);
     else
         insereNo(raiz, chave);
@@ -53,18 +58,17 @@ void ArvoreBinaria::insere(int chave)
 
 No *ArvoreBinaria::encontrar(No *no, int chave) const
 {
-    if (no->getChave() == chave) {
+    if (no->getChave() == chave)
         return no;
-    } else if (no->getChave() > chave) {
+    else if (no->getChave() > chave)
         return encontrar(no->getEsquerda(), chave);
-    } else {
+    else
         return encontrar(no->getDireita(), chave);
-    }
 }
 
 No *ArvoreBinaria::encontrar(int chave) const
 {
-    if (raiz == NULL)
+    if (vazia())
         return NULL;
     else
         return encontrar(raiz, chave);

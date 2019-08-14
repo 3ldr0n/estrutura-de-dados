@@ -17,6 +17,7 @@ public:
     ArvoreBinaria();
     ~ArvoreBinaria();
     No *getRaiz() const;
+    bool vazia() const;
     void insere(int chave);
     void remove(int chave);
     No *encontrar(int chave) const;
