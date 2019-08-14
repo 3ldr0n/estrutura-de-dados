@@ -37,3 +37,9 @@ void No::setDireita(No *no)
 {
     direita = no;
 }
+
+bool No::eFolha() const
+{
+    return direita == NULL &&
+        esquerda == NULL;
+}

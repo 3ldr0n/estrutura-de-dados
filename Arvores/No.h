@@ -16,6 +16,7 @@ public:
     No *getDireita() const;
     void setEsquerda(No* no);
     void setDireita(No* no);
+    bool eFolha() const;
 };
 
 #endif
