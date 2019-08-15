@@ -56,6 +56,39 @@ void ArvoreBinaria::insere(int chave)
         insereNo(raiz, chave);
 }
 
+void ArvoreBinaria::remove(No *no)
+{
+    No *p, *q;
+    if (no->getEsquerda() == NULL) {
+        q = no->getDireita();
+        delete no;
+        return;
+    }
+
+    p = no;
+    q = no->getEsquerda();
+    while (q->getDireita() != NULL) {
+        p = q;
+        q = q->getDireita();
+    }
+
+    if (p != no) {
+        p->setDireita(q->getEsquerda());
+        q->setEsquerda(no->getEsquerda());
+    }
+
+    q->setDireita(no->getDireita());
+    delete no;
+}
+
+void ArvoreBinaria::remove(int chave)
+{
+    if (vazia())
+        return;
+
+    remove(encontrar(raiz, chave));
+}
+
 No *ArvoreBinaria::encontrar(No *no, int chave) const
 {
     if (no->getChave() == chave)

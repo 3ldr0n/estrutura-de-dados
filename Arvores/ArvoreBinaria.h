@@ -13,6 +13,8 @@ private:
     void insereDireita(No *no, int chave);
     int valorTotal(No *no) const;
     No *encontrar(No *no, int chave) const;
+    void remove(No *no, int chave);
+    void remove(No *no);
 public:
     ArvoreBinaria();
     ~ArvoreBinaria();

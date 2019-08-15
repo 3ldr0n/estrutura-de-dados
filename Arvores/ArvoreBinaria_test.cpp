@@ -29,5 +29,10 @@ int main()
 
     std::cout << arvore.encontrar(4)->getChave() << std::endl;
 
+    arvore.remove(4);
+
+    arvore.printEmOrdem(arvore.getRaiz());
+    std::cout << std::endl;
+
     return 0;
 }
