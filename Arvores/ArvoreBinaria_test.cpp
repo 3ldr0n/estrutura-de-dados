@@ -29,10 +29,21 @@ int main()
 
     std::cout << arvore.encontrar(4)->getChave() << std::endl;
 
-    arvore.remove(4);
-
-    arvore.printEmOrdem(arvore.getRaiz());
+    ArvoreBinaria arvore_remocao;
+    arvore_remocao.insere(10);
+    arvore_remocao.insere(5);
+    std::cout << "Antes de remover: " << std::endl;
+    arvore_remocao.printEmOrdem(arvore_remocao.getRaiz());
     std::cout << std::endl;
+
+    arvore_remocao.remove(5);
+
+    std::cout << "Depois de remover: " << std::endl;
+    arvore_remocao.printEmOrdem(arvore_remocao.getRaiz());
+    std::cout << std::endl;
+
+    No *menor = arvore.menor();
+    std::cout << "Menor: " << menor->getChave() << std::endl;
 
     return 0;
 }

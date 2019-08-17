@@ -107,6 +107,13 @@ No *ArvoreBinaria::encontrar(int chave) const
         return encontrar(raiz, chave);
 }
 
+No *ArvoreBinaria::menor() const
+{
+    No *aux;
+    for (aux = raiz;aux->getEsquerda() != NULL;aux = aux->getEsquerda());
+    return aux;
+}
+
 void ArvoreBinaria::printEmOrdem(No* no) const
 {
     if (no != NULL) {

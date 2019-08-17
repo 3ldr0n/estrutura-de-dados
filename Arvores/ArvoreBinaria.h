@@ -23,6 +23,8 @@ public:
     void insere(int chave);
     void remove(int chave);
     No *encontrar(int chave) const;
+    No *menor() const;
+    int altura() const;
     void printEmOrdem(No *no) const;
     void printPreOrdem(No *no) const;
     void printPosOrdem(No *no) const;
