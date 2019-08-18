@@ -43,14 +43,11 @@ int main()
     arvore_remocao.printEmOrdem(arvore_remocao.getRaiz());
     std::cout << std::endl;
 
-    arvore_remocao.remove(10);
+    arvore_remocao.remove(5);
 
     std::cout << "Depois de remover: " << std::endl;
     arvore_remocao.printEmOrdem(arvore_remocao.getRaiz());
     std::cout << std::endl;
-
-    No *pai = arvore.encontrar(7)->pegaPai(arvore.getRaiz());
-    std::cout << "Nó pai: " << pai->getChave() << std::endl;
 
     No *menor = arvore.menor();
     std::cout << "Menor: " << menor->getChave() << std::endl;

@@ -68,6 +68,16 @@ void ArvoreBinaria::insere(int chave)
 void ArvoreBinaria::remove(No *no, int chave)
 {
     No *pai = no->pegaPai(raiz);
+    delete no;
+    if (pai->getDireita() != NULL) {
+        if (pai->getDireita()->getChave() == chave)
+            pai->setDireita(NULL);
+    }
+
+    if (pai->getEsquerda() != NULL) {
+        if (pai->getEsquerda()->getChave() == chave)
+            pai->setEsquerda(NULL);
+    }
 }
 
 void ArvoreBinaria::remove(int chave)
@@ -79,7 +89,7 @@ void ArvoreBinaria::remove(int chave)
         delete raiz;
         raiz = NULL;
     } else {
-        remove(raiz, chave);
+        remove(encontrar(chave), chave);
     }
 }
 
