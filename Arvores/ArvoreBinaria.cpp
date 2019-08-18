@@ -56,29 +56,23 @@ void ArvoreBinaria::insere(int chave)
         insereNo(raiz, chave);
 }
 
+/**
+ * Remoção de um nó da árvore.
+ * Casos:
+ * 1 - Árvore vazia (tratada no outro método).
+ * 2 - Árvore com um nó.
+ * 3 - Nó a ser deletado é uma folha.
+ * 4 - Nó só tem um filho.
+ * 5 - Nó com dois filhos.
+ */
 void ArvoreBinaria::remove(No *no)
 {
-    No *p, *q;
-    if (no->getEsquerda() == NULL) {
-        q = no->getDireita();
-        delete no;
-        return;
+    if (contaNos(raiz) == 1) {
+        delete raiz;
+        raiz = NULL;
+    } else if (no->eFolha()) {
+        return ;
     }
-
-    p = no;
-    q = no->getEsquerda();
-    while (q->getDireita() != NULL) {
-        p = q;
-        q = q->getDireita();
-    }
-
-    if (p != no) {
-        p->setDireita(q->getEsquerda());
-        q->setEsquerda(no->getEsquerda());
-    }
-
-    q->setDireita(no->getDireita());
-    delete no;
 }
 
 void ArvoreBinaria::remove(int chave)
@@ -112,6 +106,30 @@ No *ArvoreBinaria::menor() const
     No *aux;
     for (aux = raiz;aux->getEsquerda() != NULL;aux = aux->getEsquerda());
     return aux;
+}
+
+int alturaArvore(No *no, int alturaAtual)
+{
+    if (no->eFolha())
+        return 1;
+
+    if (no->getEsquerda() != NULL)
+        alturaAtual = alturaArvore(no->getEsquerda(), alturaAtual++);
+    else
+        alturaAtual = alturaArvore(no->getDireita(), alturaAtual++);
+
+    return alturaAtual;
+}
+
+int ArvoreBinaria::altura() const
+{
+    if (vazia())
+        return 0;
+
+    if (contaNos(raiz) == 1)
+        return 1;
+
+    return alturaArvore(raiz, 0);
 }
 
 void ArvoreBinaria::printEmOrdem(No* no) const

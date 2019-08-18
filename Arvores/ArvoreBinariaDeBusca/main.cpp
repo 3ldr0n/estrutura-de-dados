@@ -2,15 +2,15 @@
 
 void menu()
 {
-    std::cout << "\nARVORE BINARIA DE BUSCA" << std::endl;
+    std::cout << "\nÁRVORE BINÁRIA DE BUSCA" << std::endl;
     std::cout << "0 - sair" << std::endl;
     std::cout << "1 - incluir um nó" << std::endl;
-    std::cout << "2 - localizar un nó" << std::endl;
+    std::cout << "2 - localizar um nó" << std::endl;
     std::cout << "3 - excluir um nó" << std::endl;
-    std::cout << "4 - imprimir a arvore em Pré Ordem" << std::endl;
-    std::cout << "5 - imprimir a arvore Em Ordem" << std::endl;
-    std::cout << "6 - imprimir a arvore em Pos Ordem" << std::endl;
-    std::cout << "\nSua opcao -> ";
+    std::cout << "4 - imprimir a árvore em Pré Ordem" << std::endl;
+    std::cout << "5 - imprimir a árvore Em Ordem" << std::endl;
+    std::cout << "6 - imprimir a árvore em Pos Ordem" << std::endl;
+    std::cout << "\nSua opção -> ";
 }
 
 int main()
