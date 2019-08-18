@@ -85,6 +85,9 @@ void ArvoreBinaria::remove(int chave)
 
 No *ArvoreBinaria::encontrar(No *no, int chave) const
 {
+    if (no == NULL)
+        return NULL;
+
     if (no->getChave() == chave)
         return no;
     else if (no->getChave() > chave)
@@ -97,8 +100,8 @@ No *ArvoreBinaria::encontrar(int chave) const
 {
     if (vazia())
         return NULL;
-    else
-        return encontrar(raiz, chave);
+
+    return encontrar(raiz, chave);
 }
 
 No *ArvoreBinaria::menor() const
