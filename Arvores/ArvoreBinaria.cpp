@@ -65,14 +65,9 @@ void ArvoreBinaria::insere(int chave)
  * 4 - Nó só tem um filho.
  * 5 - Nó com dois filhos.
  */
-void ArvoreBinaria::remove(No *no)
+void ArvoreBinaria::remove(No *no, int chave)
 {
-    if (contaNos(raiz) == 1) {
-        delete raiz;
-        raiz = NULL;
-    } else if (no->eFolha()) {
-        return ;
-    }
+    No *pai = no->pegaPai(raiz);
 }
 
 void ArvoreBinaria::remove(int chave)
@@ -80,7 +75,12 @@ void ArvoreBinaria::remove(int chave)
     if (vazia())
         return;
 
-    remove(encontrar(raiz, chave));
+    if (contaNos(raiz) == 1) {
+        delete raiz;
+        raiz = NULL;
+    } else {
+        remove(raiz, chave);
+    }
 }
 
 No *ArvoreBinaria::encontrar(No *no, int chave) const

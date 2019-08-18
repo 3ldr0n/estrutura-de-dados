@@ -17,6 +17,7 @@ public:
     void setEsquerda(No* no);
     void setDireita(No* no);
     bool eFolha() const;
+    No *pegaPai(No *raiz) const;
 };
 
 #endif

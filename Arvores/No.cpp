@@ -43,3 +43,18 @@ bool No::eFolha() const
     return direita == NULL &&
         esquerda == NULL;
 }
+
+No *No::pegaPai(No *raiz) const
+{
+    if (raiz == NULL)
+        return NULL;
+
+    if (raiz->getEsquerda()->getChave() == chave ||
+        raiz->getDireita()->getChave() == chave)
+        return raiz;
+
+    if (raiz->getDireita() == NULL)
+        return pegaPai(raiz->getEsquerda());
+
+    return pegaPai(raiz->getDireita());
+}
