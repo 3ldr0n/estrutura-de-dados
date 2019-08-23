@@ -1,26 +1,31 @@
 #include "ArvoreBinaria.h"
 
-ArvoreBinaria::ArvoreBinaria()
+template <class E>
+ArvoreBinaria<E>::ArvoreBinaria()
 {
     raiz = NULL;
 }
 
-ArvoreBinaria::~ArvoreBinaria()
+template <class E>
+ArvoreBinaria<E>::~ArvoreBinaria()
 {
     delete raiz;
 }
 
-No *ArvoreBinaria::getRaiz() const
+template <class E>
+No<E> *ArvoreBinaria<E>::getRaiz() const
 {
     return raiz;
 }
 
-bool ArvoreBinaria::vazia() const
+template <class E>
+bool ArvoreBinaria<E>::vazia() const
 {
     return raiz == NULL;
 }
 
-void ArvoreBinaria::insereNo(No *no, int chave)
+template <class E>
+void ArvoreBinaria<E>::insereNo(No<E> *no, E chave)
 {
     if (chave > no->getChave())
         insereDireita(no, chave);
@@ -28,30 +33,33 @@ void ArvoreBinaria::insereNo(No *no, int chave)
         insereEsquerda(no, chave);
 }
 
-void ArvoreBinaria::insereDireita(No *no, int chave)
+template <class E>
+void ArvoreBinaria<E>::insereDireita(No<E> *no, E chave)
 {
     if (no->getDireita() == NULL) {
-        No *novoNo = new No(chave);
+        No<E> *novoNo = new No<E>(chave);
         no->setDireita(novoNo);
     } else {
         insereNo(no->getDireita(), chave);
     }
 }
 
-void ArvoreBinaria::insereEsquerda(No *no, int chave)
+template <class E>
+void ArvoreBinaria<E>::insereEsquerda(No<E> *no, E chave)
 {
     if (no->getEsquerda() == NULL) {
-        No *novoNo = new No(chave);
+        No<E> *novoNo = new No<E>(chave);
         no->setEsquerda(novoNo);
     } else {
         insereNo(no->getEsquerda(), chave);
     }
 }
 
-void ArvoreBinaria::insere(int chave)
+template <class E>
+void ArvoreBinaria<E>::insere(E chave)
 {
     if (vazia())
-        raiz = new No(chave);
+        raiz = new No<E>(chave);
     else
         insereNo(raiz, chave);
 }
@@ -65,9 +73,10 @@ void ArvoreBinaria::insere(int chave)
  * 4 - Nó só tem um filho.
  * 5 - Nó com dois filhos.
  */
-void ArvoreBinaria::remove(No *no, int chave)
+template <class E>
+void ArvoreBinaria<E>::remove(No<E> *no, E chave)
 {
-    No *pai = no->pegaPai(raiz);
+    No<E> *pai = no->pegaPai(raiz);
     delete no;
     if (pai->getDireita() != NULL) {
         if (pai->getDireita()->getChave() == chave)
@@ -80,7 +89,8 @@ void ArvoreBinaria::remove(No *no, int chave)
     }
 }
 
-void ArvoreBinaria::remove(int chave)
+template <class E>
+void ArvoreBinaria<E>::remove(E chave)
 {
     if (vazia())
         return;
@@ -93,7 +103,8 @@ void ArvoreBinaria::remove(int chave)
     }
 }
 
-No *ArvoreBinaria::encontrar(No *no, int chave) const
+template <class E>
+No<E> *ArvoreBinaria<E>::encontrar(No<E> *no, E chave) const
 {
     if (no == NULL)
         return NULL;
@@ -106,7 +117,8 @@ No *ArvoreBinaria::encontrar(No *no, int chave) const
         return encontrar(no->getDireita(), chave);
 }
 
-No *ArvoreBinaria::encontrar(int chave) const
+template <class E>
+No<E> *ArvoreBinaria<E>::encontrar(E chave) const
 {
     if (vazia())
         return NULL;
@@ -114,14 +126,17 @@ No *ArvoreBinaria::encontrar(int chave) const
     return encontrar(raiz, chave);
 }
 
-No *ArvoreBinaria::menor() const
+template <class E>
+No<E> *ArvoreBinaria<E>::menor() const
 {
-    No *aux;
+    if (vazia()) return NULL;
+    No<E> *aux;
     for (aux = raiz;aux->getEsquerda() != NULL;aux = aux->getEsquerda());
     return aux;
 }
 
-int alturaArvore(No *no, int alturaAtual)
+template <class E>
+int alturaArvore(No<E> *no, int alturaAtual)
 {
     if (no->eFolha())
         return 1;
@@ -134,7 +149,8 @@ int alturaArvore(No *no, int alturaAtual)
     return alturaAtual;
 }
 
-int ArvoreBinaria::altura() const
+template <class E>
+int ArvoreBinaria<E>::altura() const
 {
     if (vazia())
         return 0;
@@ -145,7 +161,8 @@ int ArvoreBinaria::altura() const
     return alturaArvore(raiz, 0);
 }
 
-void ArvoreBinaria::printEmOrdem(No* no) const
+template <class E>
+void ArvoreBinaria<E>::printEmOrdem(No<E> *no) const
 {
     if (no != NULL) {
         printEmOrdem(no->getEsquerda());
@@ -154,7 +171,8 @@ void ArvoreBinaria::printEmOrdem(No* no) const
     }
 }
 
-void ArvoreBinaria::printPreOrdem(No *no) const
+template <class E>
+void ArvoreBinaria<E>::printPreOrdem(No<E> *no) const
 {
     if (no != NULL) {
         std::cout << no->getChave() << " ";
@@ -163,7 +181,8 @@ void ArvoreBinaria::printPreOrdem(No *no) const
     }
 }
 
-void ArvoreBinaria::printPosOrdem(No *no) const
+template <class E>
+void ArvoreBinaria<E>::printPosOrdem(No<E> *no) const
 {
     if (no != NULL) {
         printPosOrdem(no->getEsquerda());
@@ -172,7 +191,8 @@ void ArvoreBinaria::printPosOrdem(No *no) const
     }
 }
 
-int ArvoreBinaria::contaNos(No *no) const
+template <class E>
+int ArvoreBinaria<E>::contaNos(No<E> *no) const
 {
     int numeroDeNos = 0;
     if (no != NULL) {
@@ -183,7 +203,8 @@ int ArvoreBinaria::contaNos(No *no) const
     return numeroDeNos;
 }
 
-int ArvoreBinaria::valorTotal(No *no) const
+template <class E>
+int ArvoreBinaria<E>::valorTotal(No<E> *no) const
 {
     int valorTotalArvore = 0;
     if (no != NULL) {
@@ -195,17 +216,19 @@ int ArvoreBinaria::valorTotal(No *no) const
     return valorTotalArvore;
 }
 
-int ArvoreBinaria::media(No *no) const
+template <class E>
+int ArvoreBinaria<E>::media(No<E> *no) const
 {
     int valorTotalDosNos = valorTotal(no);
     return valorTotalDosNos / contaNos(no);
 }
 
-std::list<No *> ArvoreBinaria::nosMaioresQueMedia(No *no) const
+template <class E>
+std::list<No<E> *> ArvoreBinaria<E>::nosMaioresQueMedia(No<E> *no) const
 {
-    std::list<No *> nos;
-    std::list<No *> nosDireita;
-    std::list<No *> nosEsquerda;
+    std::list<No<E> *> nos;
+    std::list<No<E> *> nosDireita;
+    std::list<No<E> *> nosEsquerda;
     int media = this->media(raiz);
     if (no != NULL) {
         if (no->getChave() > media) {

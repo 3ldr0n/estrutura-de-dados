@@ -1,4 +1,4 @@
-#include "ArvoreBinaria.h"
+#include "ArvoreBinaria.cpp"
 
 void menu()
 {
@@ -15,7 +15,7 @@ void menu()
 
 int main()
 {
-	ArvoreBinaria arvore;
+	ArvoreBinaria<int> arvore;
 
 	while (true) {
         menu();
@@ -38,7 +38,7 @@ int main()
 			int valor_a_ser_localizado;
             std::cout << "\n Informe o valor do nó a ser localizado: ";
             std::cin >> valor_a_ser_localizado;
-            No *no = arvore.encontrar(valor_a_ser_localizado);
+            No<int> *no = arvore.encontrar(valor_a_ser_localizado);
             if (no == NULL)
                 std::cout << "não existe na árvore" << std::endl;
             else

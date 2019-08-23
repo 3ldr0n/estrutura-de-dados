@@ -1,50 +1,59 @@
 #include "No.h"
 
-No::No(int chave)
+template <class E>
+No<E>::No(E chave)
 {
     this->chave = chave;
     esquerda = NULL;
     direita = NULL;
 }
 
-No::~No()
+template <class E>
+No<E>::~No()
 {
     delete esquerda;
     delete direita;
 }
 
-int No::getChave() const
+template <class E>
+E No<E>::getChave() const
 {
     return chave;
 }
 
-No* No::getEsquerda() const
+template <class E>
+No<E>* No<E>::getEsquerda() const
 {
     return esquerda;
 }
 
-No* No::getDireita() const
+template <class E>
+No<E>* No<E>::getDireita() const
 {
     return direita;
 }
 
-void No::setEsquerda(No *no)
+template <class E>
+void No<E>::setEsquerda(No<E> *no)
 {
     esquerda = no;
 }
 
-void No::setDireita(No *no)
+template <class E>
+void No<E>::setDireita(No<E> *no)
 {
     direita = no;
 }
 
-bool No::eFolha() const
+template <class E>
+bool No<E>::eFolha() const
 {
     return direita == NULL &&
         esquerda == NULL;
 }
 
-No *No::pegaPai(No *raiz) const
+template <class E>
+No<E> *No<E>::pegaPai(No<E> *raiz) const
 {
     if (raiz == NULL)
         return NULL;

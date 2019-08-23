@@ -1,8 +1,8 @@
-#include "ArvoreBinaria.h"
+#include "ArvoreBinaria.cpp"
 
 int main()
 {
-    ArvoreBinaria arvore;
+    ArvoreBinaria<int> arvore;
     arvore.insere(7);
     arvore.insere(5);
     arvore.insere(10);
@@ -28,7 +28,7 @@ int main()
     std::cout << arvore.media(arvore.getRaiz()) << std::endl;
 
     std::cout << "Nós maiores que a média da árvore:" << std::endl;
-    std::list<No *> nosMaiores = arvore.nosMaioresQueMedia(arvore.getRaiz());
+    std::list<No<int> *> nosMaiores = arvore.nosMaioresQueMedia(arvore.getRaiz());
     for (auto no : nosMaiores)
         std::cout << no->getChave() << " ";
     std::cout << std::endl;
@@ -36,7 +36,7 @@ int main()
     std::cout << "Encontrando o elemento 4:" << std::endl;
     std::cout << arvore.encontrar(4)->getChave() << std::endl;
 
-    ArvoreBinaria arvore_remocao;
+    ArvoreBinaria<int> arvore_remocao;
     arvore_remocao.insere(10);
     arvore_remocao.insere(5);
     std::cout << "Antes de remover: " << std::endl;
@@ -49,7 +49,7 @@ int main()
     arvore_remocao.printEmOrdem(arvore_remocao.getRaiz());
     std::cout << std::endl;
 
-    No *menor = arvore.menor();
+    No<int> *menor = arvore.menor();
     std::cout << "Menor: " << menor->getChave() << std::endl;
 
     int altura = arvore.altura();

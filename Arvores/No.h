@@ -3,21 +3,22 @@
 
 #include <iostream>
 
+template <class E>
 class No {
 private:
-    No *esquerda;
-    No *direita;
-    int chave;
+    No<E> *esquerda;
+    No<E> *direita;
+    E chave;
 public:
-    No(int chave);
+    No(E chave);
     ~No();
-    int getChave() const;
+    E getChave() const;
     No *getEsquerda() const;
-    No *getDireita() const;
-    void setEsquerda(No* no);
-    void setDireita(No* no);
+    No<E> *getDireita() const;
+    void setEsquerda(No<E> *no);
+    void setDireita(No<E> *no);
     bool eFolha() const;
-    No *pegaPai(No *raiz) const;
+    No<E> *pegaPai(No<E> *raiz) const;
 };
 
 #endif
