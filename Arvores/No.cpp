@@ -46,6 +46,12 @@ void No<E>::setDireita(No<E> *no)
 }
 
 template <class E>
+int No<E>::getId() const
+{
+    return id;
+}
+
+template <class E>
 bool No<E>::eFolha() const
 {
     return direita == NULL &&
