@@ -11,18 +11,19 @@ public:
     AVLNode* getRoot();
     bool isEmpty();
     int height();
-    int qtNodes();
-    void inserir (int valor);
+    int countNodes();
+    void insert(int valor);
+    void insertLeft(int valor, AVLNode *node);
+    void insertRight(int valor, AVLNode *node);
     void preOrder();
     void posOrder();
     void inOrder();
     void reverseOrder();
 private:
     AVLNode *root;
-
     int height(AVLNode*);
-    int qtNodes(AVLNode*);
-    AVLNode* inserir(AVLNode*, int);
+    int countNodes(AVLNode*);
+    AVLNode* insert(AVLNode*, int);
     void preOrder(AVLNode *no);
     void posOrder(AVLNode *no);
     void inOrder(AVLNode *no);

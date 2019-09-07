@@ -17,7 +17,8 @@ AVLNode::AVLNode(int valor)
 }
 AVLNode::~AVLNode()
 {
-    //dtor
+    delete left;
+    delete right;
 }
 void AVLNode::setData(int d)
 {
