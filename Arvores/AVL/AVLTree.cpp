@@ -29,9 +29,9 @@ int AVLTree::height(AVLNode *no)
 
 }
 
-int AVLTree::maximo(int lhs, int rhs)
+int AVLTree::maximo(int a, int b)
 {
-    return lhs > rhs ? lhs : rhs;
+    return a > b ? a : b;
 }
 
 int AVLTree::countNodes()

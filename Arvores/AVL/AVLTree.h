@@ -3,6 +3,8 @@
 
 #include "AVLNode.h"
 
+class AVLTreePrivateTest;
+
 class AVLTree
 {
 public:
@@ -13,8 +15,6 @@ public:
     int height();
     int countNodes();
     void insert(int valor);
-    void insertLeft(int valor, AVLNode *node);
-    void insertRight(int valor, AVLNode *node);
     void preOrder();
     void posOrder();
     void inOrder();
@@ -24,15 +24,18 @@ private:
     int height(AVLNode*);
     int countNodes(AVLNode*);
     AVLNode* insert(AVLNode*, int);
-    void preOrder(AVLNode *no);
-    void posOrder(AVLNode *no);
-    void inOrder(AVLNode *no);
+    void insertLeft(int valor, AVLNode *node);
+    void insertRight(int valor, AVLNode *node);
+    void preOrder(AVLNode*);
+    void posOrder(AVLNode*);
+    void inOrder(AVLNode*);
     AVLNode* rotateLL(AVLNode*);
     AVLNode* rotateRR(AVLNode*);
     AVLNode* rotateLR(AVLNode*);
     AVLNode* rotateRL(AVLNode*);
     void reverseOrder(AVLNode*);
     int maximo(int, int);
+    friend class AVLTreePrivateTest;
 };
 
 #endif
