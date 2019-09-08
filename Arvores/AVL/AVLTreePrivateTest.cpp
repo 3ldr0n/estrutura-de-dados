@@ -21,6 +21,22 @@ void AVLTreePrivateTest::test_height()
 
     tree.insert(2);
     assert(tree.height(tree.root) == 1);
+    assert(tree.height(tree.root->getRight()) == -1);
+    assert(tree.height(tree.root->getLeft()) == 0);
+}
+
+void AVLTreePrivateTest::test_countNodes()
+{
+    AVLTree tree;
+    assert(tree.countNodes(tree.root) == 0);
+
+    tree.insert(10);
+    assert(tree.countNodes(tree.root) == 1);
+
+    tree.insert(9);
+    tree.insert(11);
+    assert(tree.countNodes(tree.root) == 3);
+    assert(tree.countNodes(tree.root->getRight()) == 1);
 }
 
 int main()
@@ -28,4 +44,5 @@ int main()
     AVLTreePrivateTest test;
     test.test_maximo();
     test.test_height();
+    test.test_countNodes();
 }
