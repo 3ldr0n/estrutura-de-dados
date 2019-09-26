@@ -29,7 +29,7 @@ int AVLTree::height(AVLNode *no)
 
 }
 
-int AVLTree::maximo(int a, int b)
+int AVLTree::max(int a, int b)
 {
     return a > b ? a : b;
 }
@@ -93,7 +93,7 @@ AVLNode* AVLTree::insert(AVLNode* node, int valor)
     else if (valor > node->getData())
         insertRight(valor, node);
 
-    int node_height = maximo(height(node->getLeft()), height(node->getRight())) + 1;
+    int node_height = max(height(node->getLeft()), height(node->getRight())) + 1;
     node->setHeight(node_height);
 
     return node;
@@ -103,9 +103,9 @@ AVLNode* AVLTree::rotateLL(AVLNode *node)
 {
     AVLNode *leftSubTree = node->getLeft();
     node->setLeft(leftSubTree->getRight());
-    leftSubTree->setRight( node );
-    node->setHeight(maximo(height(node->getLeft()), height(node->getRight())) + 1);
-    leftSubTree->setHeight(maximo(height(leftSubTree->getLeft()), height(node) + 1));
+    leftSubTree->setRight(node);
+    node->setHeight(max(height(node->getLeft()), height(node->getRight())) + 1);
+    leftSubTree->setHeight(max(height(leftSubTree->getLeft()), height(node) + 1));
     return leftSubTree;
 }
 
@@ -114,11 +114,10 @@ AVLNode* AVLTree::rotateRR(AVLNode *node)
     AVLNode *rightSubTree = node->getRight();
     node->setRight(rightSubTree->getLeft());
     rightSubTree->setLeft(node);
-    node->setHeight(maximo(height(node->getLeft()), height(node->getRight())) + 1);
-    rightSubTree->setHeight(maximo(height(rightSubTree->getRight()), height(node) + 1));
+    node->setHeight(max(height(node->getLeft()), height(node->getRight())) + 1);
+    rightSubTree->setHeight(max(height(rightSubTree->getRight()), height(node) + 1));
     return rightSubTree;
 }
-
 
 AVLNode* AVLTree::rotateLR(AVLNode *node)
 {

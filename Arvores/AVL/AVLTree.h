@@ -29,12 +29,12 @@ private:
     void preOrder(AVLNode*);
     void posOrder(AVLNode*);
     void inOrder(AVLNode*);
-    AVLNode* rotateLL(AVLNode*);
-    AVLNode* rotateRR(AVLNode*);
-    AVLNode* rotateLR(AVLNode*);
-    AVLNode* rotateRL(AVLNode*);
+    AVLNode *rotateLL(AVLNode*);
+    AVLNode *rotateRR(AVLNode*);
+    AVLNode *rotateLR(AVLNode*);
+    AVLNode *rotateRL(AVLNode*);
     void reverseOrder(AVLNode*);
-    int maximo(int, int);
+    int max(int, int);
     friend class AVLTreePrivateTest;
 };
 
