@@ -217,10 +217,23 @@ int ArvoreBinaria<E>::valorTotal(No<E> *no) const
 }
 
 template <class E>
-int ArvoreBinaria<E>::media(No<E> *no) const
+double ArvoreBinaria<E>::media(No<E> *no) const
 {
     int valorTotalDosNos = valorTotal(no);
     return valorTotalDosNos / contaNos(no);
+}
+
+template <class E>
+int ArvoreBinaria<E>::numeroDeFolhas(No<E> *no) const
+{
+    if (no == NULL)
+        return 0;
+
+    if (no->eFolha())
+        return 1;
+
+    return numeroDeFolhas(no->getEsquerda())
+        + numeroDeFolhas(no->getDireita());
 }
 
 template <class E>

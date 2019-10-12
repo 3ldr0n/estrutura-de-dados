@@ -42,10 +42,31 @@ void test_countNodes()
     assert(tree.countNodes() == 4);
 }
 
+void test_insert()
+{
+    AVLTree tree;
+    tree.insert(10);
+
+    assert(tree.getRoot()->getData() == 10);
+
+    tree.insert(5);
+    tree.insert(15);
+
+    assert(tree.getRoot()->getLeft()->getData() == 5);
+    assert(tree.getRoot()->getRight()->getData() == 15);
+
+    tree.insert(16);
+    tree.insert(17);
+    //tree.insert(18);
+
+    tree.preOrder();
+}
+
 int main()
 {
     test_isEmpty();
     test_height();
     test_countNodes();
+    test_insert();
     return 0;
 }

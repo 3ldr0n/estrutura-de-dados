@@ -29,18 +29,18 @@ int AVLNode::getData()
     return data;
 }
 
-void AVLNode::setLeft(AVLNode *n)
+void AVLNode::setLeft(AVLNode *node)
 {
-    left = n;
+    left = node;
 }
 AVLNode* AVLNode::getLeft()
 {
     return left;
 }
 
-void AVLNode::setRight(AVLNode *n)
+void AVLNode::setRight(AVLNode *node)
 {
-    right = n;
+    right = node;
 }
 AVLNode* AVLNode::getRight()
 {

@@ -23,6 +23,7 @@ public:
     bool vazia() const;
     void insere(E chave);
     void remove(E chave);
+    int numeroDeFolhas(No<E> *no) const;
     No<E> *encontrar(E chave) const;
     No<E> *menor() const;
     int altura() const;
@@ -30,7 +31,7 @@ public:
     void printPreOrdem(No<E> *no) const;
     void printPosOrdem(No<E> *no) const;
     int contaNos(No<E> *no) const;
-    int media(No<E> *no) const;
+    double media(No<E> *no) const;
     std::list<No<E>*> nosMaioresQueMedia(No<E> *no) const;
 };
 

@@ -3,12 +3,12 @@
 #include "AVLTree.h"
 #include "AVLTreePrivateTest.h"
 
-void AVLTreePrivateTest::test_maximo()
+void AVLTreePrivateTest::test_max()
 {
     AVLTree tree;
-    assert(tree.maximo(2, 3) == 3);
-    assert(tree.maximo(2, 2) == 2);
-    assert(tree.maximo(50, 8) == 50);
+    assert(tree.max(2, 3) == 3);
+    assert(tree.max(2, 2) == 2);
+    assert(tree.max(50, 8) == 50);
 }
 
 void AVLTreePrivateTest::test_height()
@@ -42,7 +42,7 @@ void AVLTreePrivateTest::test_countNodes()
 int main()
 {
     AVLTreePrivateTest test;
-    test.test_maximo();
+    test.test_max();
     test.test_height();
     test.test_countNodes();
 }

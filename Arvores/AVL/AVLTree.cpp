@@ -13,33 +13,38 @@ AVLTree::~AVLTree()
     delete root;
 }
 
-bool AVLTree::isEmpty()
+AVLNode* AVLTree::getRoot() const
+{
+    return root;
+}
+
+bool AVLTree::isEmpty() const
 {
     return root == NULL;
 }
 
-int AVLTree::height()
+int AVLTree::height() const
 {
 	return height(root);
 }
 
-int AVLTree::height(AVLNode *no)
+int AVLTree::height(AVLNode *no) const
 {
 	return no == NULL ? -1 : no->getHeight();
 
 }
 
-int AVLTree::max(int a, int b)
+int AVLTree::max(int a, int b) const
 {
     return a > b ? a : b;
 }
 
-int AVLTree::countNodes()
+int AVLTree::countNodes() const
 {
     return countNodes(root);
 }
 
-int AVLTree::countNodes(AVLNode* no)
+int AVLTree::countNodes(AVLNode* no) const
 {
     if (no == NULL)
 		return 0;
@@ -53,27 +58,28 @@ int AVLTree::countNodes(AVLNode* no)
  * Insert é polimorfico. o Método publico é pra inserir na árvore.
  * Esse método invoca o método privado, que é recursivo.
  */
-void AVLTree::insert(int valor)
+void AVLTree::insert(int value)
 {
-    root = insert(root,valor);
+    root = insert(root, value);
 }
 
-void AVLTree::insertLeft(int valor, AVLNode *node)
+void AVLTree::insertLeft(int value, AVLNode *node)
 {
-    node->setLeft(insert(node->getLeft(), valor));
+    node->setLeft(insert(node->getLeft(), value));
     if (height(node->getRight()) - height(node->getLeft()) == -2) {
-        if (valor < node->getLeft()->getData())
+        if (value < node->getLeft()->getData())
             node = rotateLL(node);
         else
             node = rotateLR(node);
     }
 }
 
-void AVLTree::insertRight(int valor, AVLNode *node)
+void AVLTree::insertRight(int value, AVLNode *node)
 {
-    node->setRight(insert(node->getRight(),valor));
-    if (height( node->getRight()) - height(node->getLeft()) == 2) {
-        if (valor > node->getRight()->getData())
+    node->setRight(insert(node->getRight(), value));
+    std::cout << "Insert node right: " << node->getRight()->getData() << std::endl;
+    if (height(node->getRight()) - height(node->getLeft()) == 2) {
+        if (value > node->getRight()->getData())
             node = rotateRR(node);
         else
             node = rotateRL(node);
@@ -83,15 +89,15 @@ void AVLTree::insertRight(int valor, AVLNode *node)
 /**
  * Se é uma arvore ou subarvore vazia, cria 1 novo nó e retorna.
  */
-AVLNode* AVLTree::insert(AVLNode* node, int valor)
+AVLNode* AVLTree::insert(AVLNode* node, int value)
 {
     if (node == NULL)
-       	return new AVLNode(valor);
+       	return new AVLNode(value);
 
-    if (valor < node->getData())
-        insertLeft(valor, node);
-    else if (valor > node->getData())
-        insertRight(valor, node);
+    if (value < node->getData())
+        insertLeft(value, node);
+    else if (value > node->getData())
+        insertRight(value, node);
 
     int node_height = max(height(node->getLeft()), height(node->getRight())) + 1;
     node->setHeight(node_height);
@@ -131,27 +137,27 @@ AVLNode* AVLTree::rotateRL(AVLNode *node)
     return rotateRR(node);
 }
 
-void AVLTree::preOrder()
+void AVLTree::preOrder() const
 {
     preOrder(root);
 }
 
-void AVLTree::inOrder()
+void AVLTree::inOrder() const
 {
     inOrder(root);
 }
 
-void AVLTree::posOrder()
+void AVLTree::posOrder() const
 {
     posOrder(root);
 }
 
-void AVLTree::reverseOrder()
+void AVLTree::reverseOrder() const
 {
     reverseOrder(root);
 }
 
-void AVLTree::preOrder(AVLNode *no)
+void AVLTree::preOrder(AVLNode *no) const
 {
     if (no != NULL) {
         std::cout << no->getData() << std::endl;
@@ -160,7 +166,7 @@ void AVLTree::preOrder(AVLNode *no)
     }
 }
 
-void AVLTree::posOrder(AVLNode *no)
+void AVLTree::posOrder(AVLNode *no) const
 {
     if (no != NULL) {
         posOrder(no->getLeft());
@@ -169,7 +175,7 @@ void AVLTree::posOrder(AVLNode *no)
     }
 }
 
-void AVLTree::inOrder(AVLNode *no)
+void AVLTree::inOrder(AVLNode *no) const
 {
     if (no != NULL) {
         inOrder(no->getLeft());
@@ -178,7 +184,7 @@ void AVLTree::inOrder(AVLNode *no)
     }
 }
 
-void AVLTree::reverseOrder(AVLNode *no)
+void AVLTree::reverseOrder(AVLNode *no) const
 {
     if (no != NULL) {
         reverseOrder(no->getRight());
@@ -186,6 +192,3 @@ void AVLTree::reverseOrder(AVLNode *no)
         reverseOrder(no->getLeft());
     }
 }
-
-
-

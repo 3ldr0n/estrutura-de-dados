@@ -37,6 +37,18 @@ void test_contaNos()
 
 int main()
 {
+    ArvoreBinaria<int> arvore;
+    arvore.insere(50);
+    arvore.insere(30);
+    arvore.insere(70);
+    arvore.insere(10);
+    arvore.insere(40);
+    arvore.insere(35);
+    arvore.insere(45);
+
+    std::cout << arvore.numeroDeFolhas(arvore.getRaiz()) << std::endl;
+
+    /*
     ArvoreBinaria<int> *arvore;
     test_insere();
     test_contaNos();
@@ -81,6 +93,7 @@ int main()
 
     int altura = arvore->altura();
     std::cout << "Altura da arvore: " << altura << std::endl;
+    */
 
     return 0;
 }

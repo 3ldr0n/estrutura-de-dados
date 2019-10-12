@@ -10,7 +10,7 @@ public:
     void test_rotateRR();
     void test_rotateLR();
     void test_rotateRL();
-    void test_maximo();
+    void test_max();
 };
 
 #endif
