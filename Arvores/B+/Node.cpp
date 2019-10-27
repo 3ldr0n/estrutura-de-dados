@@ -1,9 +1,12 @@
 #include "Node.h"
 
+Node::Node(){}
+
 Node::Node(int degree, int data, int data_pos)
 {
-    this->data = new int[degree];
+    this->data = new int[degree - 1];
     this->data[data_pos] = data;
+    this->pointers = new Node[degree];
 }
 
 Node::~Node()
@@ -19,4 +22,9 @@ bool Node::isLeaf() const
 int *Node::getData() const
 {
     return data;
+}
+
+bool Node::isValid() const
+{
+    return data == NULL;
 }
