@@ -6,7 +6,7 @@ Node::Node(int degree, int data, int data_pos)
 {
     this->data = new int[degree - 1];
     this->data[data_pos] = data;
-    this->pointers = new Node[degree];
+    this->pointers = new Node*[degree];
 }
 
 Node::~Node()
@@ -22,6 +22,11 @@ bool Node::isLeaf() const
 int *Node::getData() const
 {
     return data;
+}
+
+Node **Node::getPointers() const
+{
+    return pointers;
 }
 
 bool Node::isValid() const

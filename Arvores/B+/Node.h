@@ -6,7 +6,7 @@
 class Node {
 private:
     int *data;
-    Node *pointers;
+    Node **pointers;
     bool leaf;
 public:
     Node();
@@ -14,6 +14,7 @@ public:
     ~Node();
     bool isLeaf() const;
     int *getData() const;
+    Node **getPointers() const;
     bool isValid() const;
 };
 

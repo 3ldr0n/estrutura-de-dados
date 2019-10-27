@@ -4,7 +4,7 @@ COMMON=Node.cpp BPlusTree.cpp
 
 public_test:
 	mkdir -p bin
-	$(CC) $(FLGS) $(COMMON) BPlusTreeTest.cpp -o bin/test
+	$(CC) $(CFLAGS) $(COMMON) BPlusTreeTest.cpp -o bin/test
 
 test: public_test
 	@echo "Running test"
