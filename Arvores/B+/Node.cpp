@@ -2,11 +2,11 @@
 
 Node::Node(){}
 
-Node::Node(int degree, int data, int data_pos)
+Node::Node(int degree)
 {
     this->data = new int[degree - 1];
-    this->data[data_pos] = data;
     this->pointers = new Node*[degree];
+    this->size = 0;
 }
 
 Node::~Node()
@@ -32,4 +32,24 @@ Node **Node::getPointers() const
 bool Node::isValid() const
 {
     return data == NULL;
+}
+
+void Node::add(int n)
+{
+    data[size] = n;
+    sort();
+    size++;
+}
+
+void Node::sort()
+{
+    for (size_t i = 0;i < size;i++) {
+        for (size_t j = 0;j < size;j++) {
+            if (data[j] > data[j+1]) {
+                int aux = data[j];
+                data[j] = data[j+1];
+                data[j+1] = aux;
+            }
+        }
+    }
 }

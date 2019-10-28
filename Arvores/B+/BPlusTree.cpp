@@ -18,6 +18,11 @@ Node *BPlusTree::getRoot() const
 
 void BPlusTree::insert(int n)
 {
-    if (root == NULL)
-        root = new Node(degree, n, 0);
+    if (root == NULL) {
+        root = new Node(degree);
+        root->add(n);
+        return;
+    }
+
+    root->add(n);
 }
